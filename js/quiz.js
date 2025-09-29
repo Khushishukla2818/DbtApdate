@@ -90,6 +90,51 @@ class QuizManager {
                             en: 'DBT eliminates middlemen, ensuring direct transfer of benefits to beneficiaries.',
                             hi: 'DBT बिचौलियों को खत्म करता है, लाभार्थियों को सीधे लाभ पहुंचाने को सुनिश्चित करता है।'
                         }
+                    },
+                    {
+                        question: { 
+                            en: 'Which document is mandatory for receiving DBT benefits?', 
+                            hi: 'DBT लाभ प्राप्त करने के लिए कौन सा दस्तावेज अनिवार्य है?' 
+                        },
+                        options: {
+                            en: ['Aadhaar Card', 'Passport', 'Driving License', 'Voter ID'],
+                            hi: ['आधार कार्ड', 'पासपोर्ट', 'ड्राइविंग लाइसेंस', 'वोटर आईडी']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Aadhaar Card is mandatory for DBT as it provides unique identification for benefit transfer.',
+                            hi: 'डीबीटी के लिए आधार कार्ड अनिवार्य है क्योंकि यह लाभ हस्तांतरण के लिए अद्वितीय पहचान प्रदान करता है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'DBT helps in reducing which of the following?', 
+                            hi: 'DBT निम्नलिखित में से किसे कम करने में मदद करता है?' 
+                        },
+                        options: {
+                            en: ['Leakages and corruption', 'Digital literacy', 'Bank accounts', 'Government schemes'],
+                            hi: ['रिसाव और भ्रष्टाचार', 'डिजिटल साक्षरता', 'बैंक खाते', 'सरकारी योजनाएं']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'DBT significantly reduces leakages and corruption by ensuring direct transfer to beneficiaries.',
+                            hi: 'DBT लाभार्थियों को सीधे हस्तांतरण सुनिश्चित करके रिसाव और भ्रष्टाचार को काफी कम करता है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'For successful DBT, what must be linked with your bank account?', 
+                            hi: 'सफल DBT के लिए, आपके बैंक खाते के साथ क्या जुड़ा होना चाहिए?' 
+                        },
+                        options: {
+                            en: ['Aadhaar number', 'PAN card', 'Mobile number only', 'Email address'],
+                            hi: ['आधार नंबर', 'पैन कार्ड', 'केवल मोबाइल नंबर', 'ईमेल पता']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Your Aadhaar number must be linked with your bank account for successful DBT transfers.',
+                            hi: 'सफल DBT ट्रांसफर के लिए आपका आधार नंबर आपके बैंक खाते से जुड़ा होना चाहिए।'
+                        }
                     }
                 ]
             },
@@ -110,6 +155,81 @@ class QuizManager {
                             en: 'Aadhaar seeding is the process of linking your Aadhaar number with your bank account.',
                             hi: 'आधार सीडिंग आपके आधार नंबर को आपके बैंक खाते से जोड़ने की प्रक्रिया है।'
                         }
+                    },
+                    {
+                        question: { 
+                            en: 'How many digits does an Aadhaar number have?', 
+                            hi: 'आधार नंबर में कितने अंक होते हैं?' 
+                        },
+                        options: {
+                            en: ['12 digits', '10 digits', '16 digits', '8 digits'],
+                            hi: ['12 अंक', '10 अंक', '16 अंक', '8 अंक']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Aadhaar number is a unique 12-digit identification number issued by UIDAI.',
+                            hi: 'आधार नंबर UIDAI द्वारा जारी किया गया एक अद्वितीय 12-अंकीय पहचान संख्या है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'Where can you check your Aadhaar seeding status?', 
+                            hi: 'आप अपना आधार सीडिंग स्टेटस कहाँ चेक कर सकते हैं?' 
+                        },
+                        options: {
+                            en: ['Bank website or branch', 'Post office', 'Police station', 'Municipal office'],
+                            hi: ['बैंक वेबसाइट या शाखा', 'डाकघर', 'पुलिस स्टेशन', 'नगरपालिका कार्यालय']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'You can check your Aadhaar seeding status on your bank\'s website or by visiting the branch.',
+                            hi: 'आप अपने बैंक की वेबसाइट पर या शाखा में जाकर अपना आधार सीडिंग स्टेटस चेक कर सकते हैं।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'What is required along with Aadhaar for seeding?', 
+                            hi: 'सीडिंग के लिए आधार के साथ और क्या आवश्यक है?' 
+                        },
+                        options: {
+                            en: ['Bank account details', 'PAN card', 'Driving license', 'Voter ID'],
+                            hi: ['बैंक खाता विवरण', 'पैन कार्ड', 'ड्राइविंग लाइसेंस', 'वोटर आईडी']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Bank account details including account number and IFSC code are required for Aadhaar seeding.',
+                            hi: 'आधार सीडिंग के लिए खाता संख्या और IFSC कोड सहित बैंक खाता विवरण आवश्यक है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'What happens if name in Aadhaar doesn\'t match bank records?', 
+                            hi: 'यदि आधार में नाम बैंक रिकॉर्ड से मेल नहीं खाता तो क्या होता है?' 
+                        },
+                        options: {
+                            en: ['Seeding will fail', 'Seeding will succeed automatically', 'Bank will change the name', 'Nothing happens'],
+                            hi: ['सीडिंग असफल हो जाएगी', 'सीडिंग अपने आप सफल हो जाएगी', 'बैंक नाम बदल देगा', 'कुछ नहीं होता']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'If the name in Aadhaar doesn\'t match bank records, the seeding process will fail and needs to be corrected.',
+                            hi: 'यदि आधार में नाम बैंक रिकॉर्ड से मेल नहीं खाता, तो सीडिंग प्रक्रिया असफल हो जाएगी और इसे सुधारना होगा।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'How long does Aadhaar seeding typically take?', 
+                            hi: 'आधार सीडिंग में आमतौर पर कितना समय लगता है?' 
+                        },
+                        options: {
+                            en: ['2-3 working days', '1 hour', '1 week', '1 month'],
+                            hi: ['2-3 कार्य दिवस', '1 घंटा', '1 सप्ताह', '1 महीना']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Aadhaar seeding typically takes 2-3 working days to complete after submission.',
+                            hi: 'आधार सीडिंग आमतौर पर जमा करने के बाद पूरी होने में 2-3 कार्य दिवस लगते हैं।'
+                        }
                     }
                 ]
             },
@@ -129,6 +249,111 @@ class QuizManager {
                         explanation: {
                             en: 'National Scholarship Portal (NSP) is the official portal for scholarship applications.',
                             hi: 'राष्ट्रीय छात्रवृत्ति पोर्टल (NSP) छात्रवृत्ति आवेदन के लिए आधिकारिक पोर्टल है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'What is the minimum percentage required for most SC scholarships?', 
+                            hi: 'अधिकांश SC छात्रवृत्ति के लिए न्यूनतम प्रतिशत क्या आवश्यक है?' 
+                        },
+                        options: {
+                            en: ['50%', '60%', '70%', '75%'],
+                            hi: ['50%', '60%', '70%', '75%']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Most SC scholarships require a minimum of 50% marks in the previous qualifying examination.',
+                            hi: 'अधिकांश SC छात्रवृत्ति के लिए पिछली योग्यता परीक्षा में न्यूनतम 50% अंक आवश्यक हैं।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'Which document is mandatory for caste verification?', 
+                            hi: 'जाति सत्यापन के लिए कौन सा दस्तावेज अनिवार्य है?' 
+                        },
+                        options: {
+                            en: ['Caste Certificate', 'Income Certificate', 'Domicile Certificate', 'Birth Certificate'],
+                            hi: ['जाति प्रमाण पत्र', 'आय प्रमाण पत्र', 'निवास प्रमाण पत्र', 'जन्म प्रमाण पत्र']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Valid Caste Certificate issued by competent authority is mandatory for SC scholarship verification.',
+                            hi: 'SC छात्रवृत्ति सत्यापन के लिए सक्षम प्राधिकारी द्वारा जारी वैध जाति प्रमाण पत्र अनिवार्य है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'What is the annual family income limit for most SC scholarships?', 
+                            hi: 'अधिकांश SC छात्रवृत्ति के लिए वार्षिक पारिवारिक आय सीमा क्या है?' 
+                        },
+                        options: {
+                            en: ['₹2.5 lakh', '₹5 lakh', '₹8 lakh', '₹10 lakh'],
+                            hi: ['₹2.5 लाख', '₹5 लाख', '₹8 लाख', '₹10 लाख']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'The annual family income limit for most SC scholarships is ₹2.5 lakh from all sources.',
+                            hi: 'अधिकांश SC छात्रवृत्ति के लिए सभी स्रोतों से वार्षिक पारिवारिक आय सीमा ₹2.5 लाख है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'When does the scholarship application period typically open?', 
+                            hi: 'छात्रवृत्ति आवेदन अवधि आमतौर पर कब खुलती है?' 
+                        },
+                        options: {
+                            en: ['July-August', 'January-February', 'October-November', 'April-May'],
+                            hi: ['जुलाई-अगस्त', 'जनवरी-फरवरी', 'अक्टूबर-नवंबर', 'अप्रैल-मई']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'The scholarship application period typically opens in July-August for the academic year.',
+                            hi: 'शैक्षणिक वर्ष के लिए छात्रवृत्ति आवेदन अवधि आमतौर पर जुलाई-अगस्त में खुलती है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'What happens if you don\'t renew your scholarship annually?', 
+                            hi: 'यदि आप अपनी छात्रवृत्ति का वार्षिक नवीनीकरण नहीं करते तो क्या होता है?' 
+                        },
+                        options: {
+                            en: ['Scholarship gets discontinued', 'Automatic renewal', 'Grace period given', 'Nothing happens'],
+                            hi: ['छात्रवृत्ति बंद हो जाती है', 'स्वचालित नवीनीकरण', 'छूट अवधि मिलती है', 'कुछ नहीं होता']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'If you don\'t renew your scholarship annually, it gets discontinued and you need to reapply.',
+                            hi: 'यदि आप अपनी छात्रवृत्ति का वार्षिक नवीनीकरण नहीं करते, तो यह बंद हो जाती है और आपको पुनः आवेदन करना होगा।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'Which bank account type is recommended for scholarship?', 
+                            hi: 'छात्रवृत्ति के लिए किस प्रकार का बैंक खाता अनुशंसित है?' 
+                        },
+                        options: {
+                            en: ['Savings Account', 'Current Account', 'Fixed Deposit', 'Recurring Deposit'],
+                            hi: ['बचत खाता', 'चालू खाता', 'सावधि जमा', 'आवर्ती जमा']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'Savings account in the student\'s name is recommended for receiving scholarship amounts.',
+                            hi: 'छात्रवृत्ति राशि प्राप्त करने के लिए छात्र के नाम पर बचत खाता अनुशंसित है।'
+                        }
+                    },
+                    {
+                        question: { 
+                            en: 'How long after approval does scholarship amount typically credit?', 
+                            hi: 'अप्रूवल के कितने समय बाद छात्रवृत्ति राशि आमतौर पर क्रेडिट होती है?' 
+                        },
+                        options: {
+                            en: ['2-4 weeks', '2-3 days', '2-3 months', '6 months'],
+                            hi: ['2-4 सप्ताह', '2-3 दिन', '2-3 महीने', '6 महीने']
+                        },
+                        correct: 0,
+                        explanation: {
+                            en: 'After approval, scholarship amount typically credits to the account within 2-4 weeks.',
+                            hi: 'अप्रूवल के बाद, छात्रवृत्ति राशि आमतौर पर 2-4 सप्ताह के भीतर खाते में क्रेडिट हो जाती है।'
                         }
                     }
                 ]
