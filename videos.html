@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Video Tutorials for Scholarship Application and DBT Process">
+    <title data-i18n="videos.title">Video Tutorials - DBTGuide</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="govt-logo" role="img" aria-label="Government of India">🇮🇳</div>
+                    <div class="site-title">
+                        <h1 data-i18n="site.title">DBTGuide</h1>
+                        <p data-i18n="site.subtitle">Scholarship Scheme for SC Students</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos" class="active">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <span data-i18n="site.videos">Video Tutorials</span>
+            </div>
+            
+            <h2 class="page-title" data-i18n="videos.title">Video Tutorials</h2>
+            <p class="page-intro" data-i18n="videos.intro">Step-by-step video guides in multiple languages</p>
+            
+            <div class="video-filters">
+                <div class="language-filter">
+                    <label data-i18n="videos.filterByLanguage">Filter by Language:</label>
+                    <select id="videoLanguageFilter">
+                        <option value="all" data-i18n="videos.allLanguages">All Languages</option>
+                        <option value="en" data-i18n="videos.english">English</option>
+                        <option value="hi" data-i18n="videos.hindi">Hindi</option>
+                    </select>
+                </div>
+                <div class="category-filter">
+                    <label data-i18n="videos.filterByCategory">Filter by Category:</label>
+                    <select id="videoCategoryFilter">
+                        <option value="all" data-i18n="videos.allCategories">All Categories</option>
+                        <option value="seeding" data-i18n="videos.aadhaarSeeding">Aadhaar Seeding</option>
+                        <option value="application" data-i18n="videos.applicationProcess">Application Process</option>
+                        <option value="dbt" data-i18n="videos.dbtProcess">DBT Process</option>
+                        <option value="troubleshooting" data-i18n="videos.troubleshooting">Troubleshooting</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="videos-grid" id="videosGrid">
+                <!-- Videos loaded dynamically -->
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content video-modal">
+            <div class="modal-header">
+                <h3 id="videoTitle">Video Tutorial</h3>
+                <button class="modal-close" id="videoClose">×</button>
+            </div>
+            <div class="modal-body">
+                <div class="video-container" id="videoContainer">
+                    <!-- Video embed loaded here -->
+                </div>
+                <div class="video-details">
+                    <p id="videoDescription"></p>
+                    <div class="video-meta">
+                        <span class="video-duration" id="videoDuration"></span>
+                        <span class="video-language" id="videoLanguage"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span data-i18n="chatbot.title">Help Assistant</span>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/videos.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

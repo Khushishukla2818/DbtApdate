@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive step-by-step guide for Aadhaar seeding process">
+    <title data-i18n="procedure.title">Procedure Guide - DBTGuide</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/procedure.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="govt-logo" role="img" aria-label="Government of India">🇮🇳</div>
+                    <div class="site-title">
+                        <h1 data-i18n="site.title">DBTGuide</h1>
+                        <p data-i18n="site.subtitle">Scholarship Scheme for SC Students</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide" class="active">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <span data-i18n="site.procedureGuide">Procedure Guide</span>
+            </div>
+            
+            <h2 class="page-title" data-i18n="procedure.title">Interactive Procedure Guide</h2>
+            
+            <div class="procedure-selector">
+                <h3 data-i18n="procedure.selectCase">Select Your Case:</h3>
+                <div class="case-buttons">
+                    <button class="case-btn active" data-case="fresh" data-i18n="procedure.freshSeeding">Fresh Seeding</button>
+                    <button class="case-btn" data-case="reseeding" data-i18n="procedure.reSeeding">Re-Seeding</button>
+                    <button class="case-btn" data-case="bankchange" data-i18n="procedure.bankChange">Bank Change</button>
+                </div>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+                <div class="progress-steps">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label" data-i18n="procedure.step1">Base Portal</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label" data-i18n="procedure.step2">Send Request</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label" data-i18n="procedure.step3">Aadhaar Details</div>
+                    </div>
+                    <div class="step" data-step="4">
+                        <div class="step-number">4</div>
+                        <div class="step-label" data-i18n="procedure.step4">Bank Details</div>
+                    </div>
+                    <div class="step" data-step="5">
+                        <div class="step-number">5</div>
+                        <div class="step-label" data-i18n="procedure.step5">Confirm & Submit</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="procedure-content">
+                <div class="step-content" id="stepContent">
+                    <!-- Dynamic content loaded here -->
+                </div>
+                
+                <div class="side-checklist">
+                    <h4 data-i18n="procedure.actionChecklist">Action Checklist</h4>
+                    <ul class="checklist" id="actionChecklist">
+                        <!-- Dynamic checklist items -->
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="procedure-controls">
+                <button class="btn btn-secondary" id="prevBtn" disabled data-i18n="procedure.back">Back</button>
+                <button class="btn btn-primary" id="nextBtn" data-i18n="procedure.next">Next</button>
+                <button class="btn btn-success" id="startBtn" data-i18n="procedure.startLearning">Start Learning</button>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Completion Modal -->
+    <div class="modal" id="completionModal">
+        <div class="modal-content">
+            <h3 data-i18n="procedure.congratulations">Congratulations!</h3>
+            <p data-i18n="procedure.completionMessage">You have successfully completed the seeding guide</p>
+            <div class="modal-buttons">
+                <button class="btn btn-primary" id="goHomeBtn" data-i18n="procedure.goHome">Go to Home</button>
+                <button class="btn btn-secondary" id="restartBtn" data-i18n="procedure.restart">Restart Guide</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span data-i18n="chatbot.title">Help Assistant</span>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/procedure.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

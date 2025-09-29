@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Quiz - Test Your Knowledge of DBT and Scholarship Process">
+    <title data-i18n="quiz.title">Quiz - DBTGuide</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="govt-logo" role="img" aria-label="Government of India">🇮🇳</div>
+                    <div class="site-title">
+                        <h1 data-i18n="site.title">DBTGuide</h1>
+                        <p data-i18n="site.subtitle">Scholarship Scheme for SC Students</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz" class="active">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <span data-i18n="site.quiz">Quiz</span>
+            </div>
+            
+            <div id="quizSelection" class="quiz-selection">
+                <h2 class="page-title" data-i18n="quiz.title">Knowledge Quiz</h2>
+                <p class="page-intro" data-i18n="quiz.intro">Test your understanding of DBT and scholarship process</p>
+                
+                <div class="quiz-topics">
+                    <div class="quiz-card" data-quiz="dbt-basics">
+                        <h3 data-i18n="quiz.dbtBasics">DBT Basics</h3>
+                        <p data-i18n="quiz.dbtBasicsDesc">Understanding Direct Benefit Transfer</p>
+                        <div class="quiz-meta">
+                            <span class="quiz-questions">5 Questions</span>
+                            <span class="quiz-duration">~3 minutes</span>
+                        </div>
+                        <button class="btn btn-primary start-quiz" data-quiz="dbt-basics" data-i18n="quiz.startQuiz">Start Quiz</button>
+                    </div>
+                    
+                    <div class="quiz-card" data-quiz="aadhaar-seeding">
+                        <h3 data-i18n="quiz.aadhaarSeeding">Aadhaar Seeding</h3>
+                        <p data-i18n="quiz.aadhaarSeedingDesc">Linking Aadhaar with bank account</p>
+                        <div class="quiz-meta">
+                            <span class="quiz-questions">6 Questions</span>
+                            <span class="quiz-duration">~4 minutes</span>
+                        </div>
+                        <button class="btn btn-primary start-quiz" data-quiz="aadhaar-seeding" data-i18n="quiz.startQuiz">Start Quiz</button>
+                    </div>
+                    
+                    <div class="quiz-card" data-quiz="scholarship-process">
+                        <h3 data-i18n="quiz.scholarshipProcess">Scholarship Application</h3>
+                        <p data-i18n="quiz.scholarshipProcessDesc">Application process and requirements</p>
+                        <div class="quiz-meta">
+                            <span class="quiz-questions">8 Questions</span>
+                            <span class="quiz-duration">~5 minutes</span>
+                        </div>
+                        <button class="btn btn-primary start-quiz" data-quiz="scholarship-process" data-i18n="quiz.startQuiz">Start Quiz</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="quizContainer" class="quiz-container hidden">
+                <div class="quiz-header">
+                    <h3 id="quizTitle"></h3>
+                    <div class="quiz-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" id="quizProgress"></div>
+                        </div>
+                        <span class="progress-text">
+                            <span id="currentQuestion">1</span> of <span id="totalQuestions">5</span>
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="quiz-content">
+                    <div class="question-container">
+                        <h4 id="questionText"></h4>
+                        <div class="options-container" id="optionsContainer">
+                            <!-- Options loaded dynamically -->
+                        </div>
+                    </div>
+                    
+                    <div class="quiz-controls">
+                        <button class="btn btn-secondary" id="prevQuestion" data-i18n="quiz.previous">Previous</button>
+                        <button class="btn btn-primary" id="nextQuestion" data-i18n="quiz.next">Next</button>
+                        <button class="btn btn-success" id="submitQuiz" data-i18n="quiz.submit">Submit Quiz</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="quizResults" class="quiz-results hidden">
+                <div class="results-header">
+                    <h3 data-i18n="quiz.results">Quiz Results</h3>
+                    <div class="score-display">
+                        <div class="score-circle">
+                            <span id="scorePercentage"></span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="results-details">
+                    <div class="score-breakdown">
+                        <div class="score-item">
+                            <span data-i18n="quiz.correct">Correct Answers:</span>
+                            <span id="correctCount"></span>
+                        </div>
+                        <div class="score-item">
+                            <span data-i18n="quiz.incorrect">Incorrect Answers:</span>
+                            <span id="incorrectCount"></span>
+                        </div>
+                        <div class="score-item">
+                            <span data-i18n="quiz.percentage">Percentage:</span>
+                            <span id="scorePercent"></span>
+                        </div>
+                    </div>
+                    
+                    <div class="results-actions">
+                        <button class="btn btn-primary" id="generateCertificate" data-i18n="quiz.certificate">Generate Certificate</button>
+                        <button class="btn btn-secondary" id="retakeQuiz" data-i18n="quiz.retake">Retake Quiz</button>
+                        <button class="btn btn-success" id="backToSelection" data-i18n="quiz.backToQuizzes">Back to Quizzes</button>
+                    </div>
+                </div>
+                
+                <div class="answer-review" id="answerReview">
+                    <h4 data-i18n="quiz.reviewAnswers">Review Your Answers</h4>
+                    <div class="review-container" id="reviewContainer">
+                        <!-- Review items loaded dynamically -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span data-i18n="chatbot.title">Help Assistant</span>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/quiz.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

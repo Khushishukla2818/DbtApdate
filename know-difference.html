@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Understanding the difference between Aadhaar linking, DBT and Seeding">
+    <title data-i18n="knowledge.title">Know the Difference - DBTGuide</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="govt-logo" role="img" aria-label="Government of India">🇮🇳</div>
+                    <div class="site-title">
+                        <h1 data-i18n="site.title">DBTGuide</h1>
+                        <p data-i18n="site.subtitle">Scholarship Scheme for SC Students</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference" class="active">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <div class="breadcrumb">
+                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <span data-i18n="site.knowDifference">Know the Difference</span>
+            </div>
+            
+            <h2 class="page-title" data-i18n="knowledge.title">Know the Difference</h2>
+            <p class="page-intro" data-i18n="knowledge.intro">Understanding key concepts for successful scholarship application</p>
+            
+            <div class="knowledge-tabs">
+                <div class="tab-nav">
+                    <button class="tab-button active" data-tab="aadhaar-linking" data-i18n="knowledge.aadhaarLinking">Aadhaar Linking</button>
+                    <button class="tab-button" data-tab="dbt-enabled" data-i18n="knowledge.dbtEnabled">DBT Enabled</button>
+                    <button class="tab-button" data-tab="aadhaar-seeding" data-i18n="knowledge.aadhaarSeeding">Aadhaar Seeding</button>
+                    <button class="tab-button" data-tab="myths-faqs" data-i18n="knowledge.mythsFaqs">Myths & FAQs</button>
+                </div>
+                
+                <div class="tab-content">
+                    <div class="tab-panel active" id="aadhaar-linking">
+                        <h3 data-i18n="knowledge.aadhaarLinkingTitle">What is Aadhaar Linking?</h3>
+                        <div class="knowledge-card">
+                            <p data-i18n="knowledge.aadhaarLinkingDesc">Aadhaar linking is the process of connecting your Aadhaar number with your bank account or other services.</p>
+                            <div class="examples">
+                                <h4 data-i18n="knowledge.examples">Examples:</h4>
+                                <ul>
+                                    <li data-i18n="knowledge.aadhaarExample1">Linking Aadhaar with bank account for subsidies</li>
+                                    <li data-i18n="knowledge.aadhaarExample2">Connecting Aadhaar with mobile number</li>
+                                    <li data-i18n="knowledge.aadhaarExample3">Linking Aadhaar with PAN card</li>
+                                </ul>
+                            </div>
+                            <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.learnMore">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="dbt-enabled">
+                        <h3 data-i18n="knowledge.dbtEnabledTitle">What does DBT Enabled Mean?</h3>
+                        <div class="knowledge-card">
+                            <p data-i18n="knowledge.dbtEnabledDesc">DBT Enabled means your bank account can receive direct government transfers without delays.</p>
+                            <div class="examples">
+                                <h4 data-i18n="knowledge.examples">Benefits:</h4>
+                                <ul>
+                                    <li data-i18n="knowledge.dbtBenefit1">Direct transfer without intermediaries</li>
+                                    <li data-i18n="knowledge.dbtBenefit2">Faster processing of scholarships</li>
+                                    <li data-i18n="knowledge.dbtBenefit3">Reduced paperwork and delays</li>
+                                </ul>
+                            </div>
+                            <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.learnMore">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="aadhaar-seeding">
+                        <h3 data-i18n="knowledge.aadhaarSeedingTitle">What is Aadhaar Seeding?</h3>
+                        <div class="knowledge-card">
+                            <p data-i18n="knowledge.aadhaarSeedingDesc">Aadhaar seeding is specifically linking your Aadhaar with your bank account for DBT purposes.</p>
+                            <div class="examples">
+                                <h4 data-i18n="knowledge.steps">Process Steps:</h4>
+                                <ul>
+                                    <li data-i18n="knowledge.seedingStep1">Visit your bank or use online portal</li>
+                                    <li data-i18n="knowledge.seedingStep2">Provide Aadhaar number and bank details</li>
+                                    <li data-i18n="knowledge.seedingStep3">Verify and confirm seeding</li>
+                                </ul>
+                            </div>
+                            <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.startGuide">Start Interactive Guide</a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="myths-faqs">
+                        <h3 data-i18n="knowledge.mythsTitle">Common Myths & FAQs</h3>
+                        <div class="faq-search">
+                            <input type="text" id="faqSearch" placeholder="Search FAQs..." data-i18n-placeholder="knowledge.searchPlaceholder">
+                        </div>
+                        <div class="faq-accordion" id="faqAccordion">
+                            <!-- FAQs loaded from JSON -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <div class="chat-widget" id="chatWidget">
+        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <span data-i18n="chatbot.title">Help Assistant</span>
+                <button class="chat-close" id="chatClose">×</button>
+            </div>
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="chat-input">
+                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <button id="chatSend">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/knowledge.js"></script>
+    <script src="js/chatbot.js"></script>
+</body>
+</html>

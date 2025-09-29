@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Administrator Panel for Scholarship Management">
+    <title data-i18n="admin.title">Administrator Panel - DBTGuide</title>
+    
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/admin.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="logo-section">
+                    <div class="govt-logo" role="img" aria-label="Government of India">🇮🇳</div>
+                    <div class="site-title">
+                        <h1 data-i18n="site.title">DBTGuide</h1>
+                        <p data-i18n="site.subtitle">Scholarship Scheme for SC Students</p>
+                    </div>
+                </div>
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                    <div class="admin-user" id="adminUser" style="display:none;">
+                        <span id="adminName">Administrator</span>
+                        <button class="btn btn-sm" id="logoutBtn" data-i18n="admin.logout">Logout</button>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin" class="active">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="container">
+            <!-- Login Form -->
+            <div id="adminLogin" class="admin-login">
+                <div class="login-card">
+                    <h2 data-i18n="admin.loginTitle">Administrator Login</h2>
+                    <form id="loginForm">
+                        <div class="form-group">
+                            <label for="adminUsername" data-i18n="admin.username">Username:</label>
+                            <input type="text" id="adminUsername" name="username" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="adminPassword" data-i18n="admin.password">Password:</label>
+                            <input type="password" id="adminPassword" name="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary" data-i18n="admin.login">Login</button>
+                    </form>
+                    <div class="login-info">
+                        <p data-i18n="admin.loginNote">For demo purposes, use any username/password</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Admin Panel -->
+            <div id="adminPanel" class="admin-panel hidden">
+                <div class="breadcrumb">
+                    <a href="index.html" data-i18n="site.home">Home</a> > 
+                    <span data-i18n="site.admin">Administrator</span>
+                </div>
+                
+                <h2 class="page-title" data-i18n="admin.title">Administrator Panel</h2>
+                
+                <div class="admin-tabs">
+                    <div class="tab-nav">
+                        <button class="tab-button active" data-tab="students" data-i18n="admin.studentsTab">Student Management</button>
+                        <button class="tab-button" data-tab="sms" data-i18n="admin.smsTab">SMS Campaigns</button>
+                        <button class="tab-button" data-tab="dashboard" data-i18n="admin.dashboardTab">Dashboard</button>
+                    </div>
+                    
+                    <div class="tab-content">
+                        <!-- Students Tab -->
+                        <div class="tab-panel active" id="students">
+                            <div class="upload-section">
+                                <h3 data-i18n="admin.uploadStudentData">Upload Student Data</h3>
+                                <div class="upload-area">
+                                    <input type="file" id="csvUpload" accept=".csv" style="display: none;">
+                                    <div class="upload-dropzone" id="uploadDropzone">
+                                        <div class="upload-icon">📁</div>
+                                        <p data-i18n="admin.dragDropCSV">Drag and drop CSV file or click to browse</p>
+                                        <button class="btn btn-primary" onclick="document.getElementById('csvUpload').click()" data-i18n="admin.browseFiles">Browse Files</button>
+                                    </div>
+                                </div>
+                                <div class="csv-format-info">
+                                    <h4 data-i18n="admin.csvFormat">Required CSV Format:</h4>
+                                    <p data-i18n="admin.csvColumns">studentId,name,phone,lang,aadhaar,bankAccount,ifsc,scholarshipType,email</p>
+                                </div>
+                            </div>
+                            
+                            <div class="students-table">
+                                <div class="table-controls">
+                                    <input type="text" id="studentSearch" placeholder="Search students..." data-i18n-placeholder="admin.searchStudents">
+                                    <select id="scholarshipFilter">
+                                        <option value="all" data-i18n="admin.allScholarships">All Scholarships</option>
+                                        <option value="PreMatric">Pre-Matric</option>
+                                        <option value="PostMatric">Post-Matric</option>
+                                    </select>
+                                </div>
+                                <div class="table-container">
+                                    <table class="table" id="studentsTable">
+                                        <thead>
+                                            <tr>
+                                                <th data-i18n="admin.studentId">Student ID</th>
+                                                <th data-i18n="admin.name">Name</th>
+                                                <th data-i18n="admin.phone">Phone</th>
+                                                <th data-i18n="admin.scholarshipType">Scholarship Type</th>
+                                                <th data-i18n="admin.status">Status</th>
+                                                <th data-i18n="admin.actions">Actions</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody id="studentsTableBody">
+                                            <!-- Student data loaded dynamically -->
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- SMS Tab -->
+                        <div class="tab-panel" id="sms">
+                            <div class="sms-campaign">
+                                <h3 data-i18n="admin.createSMSCampaign">Create SMS Campaign</h3>
+                                
+                                <div class="campaign-form">
+                                    <div class="form-group">
+                                        <label for="campaignName" data-i18n="admin.campaignName">Campaign Name:</label>
+                                        <input type="text" id="campaignName" class="form-input">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="messageTemplate" data-i18n="admin.messageTemplate">Message Template:</label>
+                                        <textarea id="messageTemplate" class="form-input" rows="4" placeholder="Use {{name}}, {{amount}}, {{status}} placeholders"></textarea>
+                                    </div>
+                                    
+                                    <div class="form-row">
+                                        <div class="form-group">
+                                            <label for="targetLanguage" data-i18n="admin.targetLanguage">Target Language:</label>
+                                            <select id="targetLanguage" class="form-select">
+                                                <option value="all" data-i18n="admin.allLanguages">All Languages</option>
+                                                <option value="en">English</option>
+                                                <option value="hi">Hindi</option>
+                                            </select>
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="targetScholarship" data-i18n="admin.targetScholarship">Target Scholarship:</label>
+                                            <select id="targetScholarship" class="form-select">
+                                                <option value="all" data-i18n="admin.allScholarships">All Scholarships</option>
+                                                <option value="PreMatric">Pre-Matric</option>
+                                                <option value="PostMatric">Post-Matric</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="scheduleTime" data-i18n="admin.scheduleTime">Schedule Time:</label>
+                                        <input type="datetime-local" id="scheduleTime" class="form-input">
+                                        <small data-i18n="admin.scheduleNote">Leave empty to send immediately</small>
+                                    </div>
+                                    
+                                    <div class="campaign-preview">
+                                        <h4 data-i18n="admin.campaignPreview">Campaign Preview</h4>
+                                        <div class="preview-stats">
+                                            <span data-i18n="admin.targetedStudents">Targeted Students: </span>
+                                            <span id="targetedCount">0</span>
+                                        </div>
+                                        <div class="message-preview" id="messagePreview">
+                                            <!-- Preview message -->
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="campaign-actions">
+                                        <button class="btn btn-secondary" id="previewCampaign" data-i18n="admin.preview">Preview Campaign</button>
+                                        <button class="btn btn-primary" id="sendCampaign" data-i18n="admin.sendCampaign">Send Campaign</button>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="campaign-history">
+                                <h3 data-i18n="admin.campaignHistory">Campaign History</h3>
+                                <div class="history-filters">
+                                    <select id="historyStatus">
+                                        <option value="all" data-i18n="admin.allStatuses">All Statuses</option>
+                                        <option value="sent" data-i18n="admin.sent">Sent</option>
+                                        <option value="scheduled" data-i18n="admin.scheduled">Scheduled</option>
+                                        <option value="failed" data-i18n="admin.failed">Failed</option>
+                                    </select>
+                                </div>
+                                <div id="campaignHistoryList">
+                                    <!-- Campaign history loaded dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <!-- Dashboard Tab -->
+                        <div class="tab-panel" id="dashboard">
+                            <div class="dashboard-overview">
+                                <h3 data-i18n="admin.dashboardTitle">System Overview</h3>
+                                
+                                <div class="kpi-cards">
+                                    <div class="kpi-card">
+                                        <div class="kpi-value" id="totalStudents">0</div>
+                                        <div class="kpi-label" data-i18n="admin.totalStudents">Total Students</div>
+                                    </div>
+                                    <div class="kpi-card">
+                                        <div class="kpi-value" id="messagesSent">0</div>
+                                        <div class="kpi-label" data-i18n="admin.messagesSent">Messages Sent</div>
+                                    </div>
+                                    <div class="kpi-card">
+                                        <div class="kpi-value" id="deliveryRate">0%</div>
+                                        <div class="kpi-label" data-i18n="admin.deliveryRate">Delivery Rate</div>
+                                    </div>
+                                    <div class="kpi-card">
+                                        <div class="kpi-value" id="activeCampaigns">0</div>
+                                        <div class="kpi-label" data-i18n="admin.activeCampaigns">Active Campaigns</div>
+                                    </div>
+                                </div>
+                                
+                                <div class="dashboard-charts">
+                                    <div class="chart-container">
+                                        <h4 data-i18n="admin.messagesOverTime">Messages Over Time</h4>
+                                        <canvas id="messagesChart" width="400" height="200"></canvas>
+                                    </div>
+                                    <div class="chart-container">
+                                        <h4 data-i18n="admin.scholarshipDistribution">Scholarship Distribution</h4>
+                                        <canvas id="scholarshipChart" width="400" height="200"></canvas>
+                                    </div>
+                                </div>
+                                
+                                <div class="dashboard-actions">
+                                    <button class="btn btn-primary" id="downloadReport" data-i18n="admin.downloadReport">Download Report</button>
+                                    <button class="btn btn-secondary" id="refreshDashboard" data-i18n="admin.refreshData">Refresh Data</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js"></script>
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/admin.js"></script>
+</body>
+</html>

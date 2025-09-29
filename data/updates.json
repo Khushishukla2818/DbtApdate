@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "date": "2025-01-15",
+    "title": {
+      "en": "Scholarship disbursement completed for 50,000 students",
+      "hi": "50,000 छात्रों के लिए छात्रवृत्ति वितरण पूरा"
+    },
+    "description": {
+      "en": "Direct benefit transfer successful through DBT portal",
+      "hi": "डीबीटी पोर्टल के माध्यम से प्रत्यक्ष लाभ अंतरण सफल"
+    },
+    "link": "#",
+    "category": "disbursement"
+  },
+  {
+    "id": 2,
+    "date": "2025-01-10",
+    "title": {
+      "en": "New online portal features launched",
+      "hi": "नई ऑनलाइन पोर्टल सुविधाएं शुरू"
+    },
+    "description": {
+      "en": "Enhanced user experience with multilingual support",
+      "hi": "बहुभाषी समर्थन के साथ बेहतर उपयोगकर्ता अनुभव"
+    },
+    "link": "#",
+    "category": "portal"
+  },
+  {
+    "id": 3,
+    "date": "2025-01-05", 
+    "title": {
+      "en": "Mobile app now supports 12 regional languages",
+      "hi": "मोबाइल ऐप अब 12 क्षेत्रीय भाषाओं का समर्थन करता है"
+    },
+    "description": {
+      "en": "Better accessibility for rural students across India",
+      "hi": "भारत भर के ग्रामीण छात्रों के लिए बेहतर पहुंच"
+    },
+    "link": "#",
+    "category": "mobile"
+  }
+]
