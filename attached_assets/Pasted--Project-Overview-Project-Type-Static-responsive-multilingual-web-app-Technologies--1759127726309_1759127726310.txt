@@ -1,0 +1,92 @@
+
+## Project Overview
+
+**Project Type:** Static responsive multilingual web app
+**Technologies:** HTML, CSS, JavaScript (no frameworks)
+**Design Style:** Government-style, accessible, and mobile-friendly
+**Languages Supported:** English, Hindi (localStorage-based persistence, RTL support)
+
+---
+
+## Completed Modules
+
+* **Chatbot:** Rule-based, multilingual, with fuzzy matching and keyword responses
+* **Quiz:** Multilingual, scoring, certificate generation using jsPDF
+* **Aadhaar Status Check:** Functional
+* **Community Outreach Library:** Searchable documents, forms, infographics with preview/download
+
+> These modules are already implemented; no further focus needed.
+
+---
+
+## Modules to Enhance / Implement
+
+### 1. Homepage
+
+* **Hero Section:** Clear banner or introduction
+* **Scholarship Info Cards:** Show available schemes with brief description and call-to-action
+* **Recent Updates Carousel:** Auto-scroll or manual navigation
+* **Feature Blocks:** Highlight key features of the app
+* **Enhancements Needed:**
+
+  * Make layout fully responsive
+  * Improve visual hierarchy and accessibility
+  * Integrate multilingual support for all content
+
+---
+
+### 2. “Know the Difference” Page
+
+* **Purpose:** Explain differences between Aadhaar linking, DBT, and seeding
+* **UI Components:** Tabs or accordions to show each concept
+* **Enhancements Needed:**
+
+  * Proper structured content for each tab/accordion
+  * Multilingual text support
+  * Clean and consistent styling for readability
+
+---
+
+### 3. Interactive Procedure Guide
+
+* **Purpose:** Guide users through **Fresh Seeding, Re-Seeding, or Bank Change**
+* **Current Issue:** Progress flow not properly implemented; steps unclear
+* **Enhancements Needed:**
+
+  * Define **5-step progress flow** for each procedure type
+  * Display steps visually (e.g., progress bar, numbered steps)
+  * Step content must be multilingual and dynamically loaded from JSON
+  * Allow navigation between steps (next/back buttons)
+  * Include validations or tooltips where necessary
+
+---
+
+### 4. Administrator Panel
+
+* **Purpose:** Manage student data, campaigns, and notifications
+* **Required Features:**
+
+  * **Student CSV Upload:** Bulk upload student information
+  * **SMS Template Creation:** Create/edit message templates
+  * **Campaign Management:** Assign messages to student groups, schedule campaigns
+  * **Dashboard Widgets:**
+
+    * KPIs for campaigns, student engagement
+    * Charts using Chart.js
+    * Export functionality (CSV download)
+* **Enhancements Needed:**
+
+  * Fully functional, intuitive UI for admins
+  * Proper JSON-driven data handling
+  * Multilingual support for admin interface
+
+---
+
+### 5. General Enhancements
+
+* All content (homepage, procedure guide, know-the-difference page, admin panel) must be **driven from JSON files** (`i18n/*.json` for translations, `data/*.json` for dynamic content) for easy maintenance.
+* Ensure **full responsiveness** for mobile, tablet, and desktop
+* Maintain **government-style accessibility** (colors, font size, contrast, navigation)
+
+with genuine links and should look hard worked
+
