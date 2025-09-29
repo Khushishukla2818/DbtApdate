@@ -53,31 +53,124 @@
         <section class="hero-section">
             <div class="container">
                 <div class="hero-content">
+                    <div class="hero-announcement">
+                        <span class="announcement-badge">📢</span>
+                        <span data-i18n="home.announcement">New: Online Aadhaar Seeding Portal Now Live!</span>
+                    </div>
                     <h2 class="hero-title" data-i18n="home.heroTitle">Scholarship Scheme for SC Students</h2>
-                    <p class="hero-subtitle" data-i18n="home.heroSubtitle">Direct Benefit Transfer (DBT) - Empowering Education</p>
+                    <p class="hero-subtitle" data-i18n="home.heroSubtitle">Direct Benefit Transfer (DBT) - Empowering Education Through Digital India</p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">2.1L+</div>
+                            <div class="stat-label" data-i18n="home.studentsHelped">Students Helped</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">₹820Cr+</div>
+                            <div class="stat-label" data-i18n="home.amountDisbursed">Amount Disbursed</div>
+                        </div>
+                        <div class="stat-item">
+                            <div class="stat-number">98.5%</div>
+                            <div class="stat-label" data-i18n="home.successRate">Success Rate</div>
+                        </div>
+                    </div>
                     
                     <div class="hero-buttons">
-                        <a href="#" class="btn btn-primary" data-i18n="home.viewReports">View Official Reports</a>
-                        <a href="procedure-guide.html" class="btn btn-secondary" data-i18n="home.applyChecklist">Apply Checklist</a>
+                        <a href="https://scholarships.gov.in" target="_blank" class="btn btn-primary" data-i18n="home.viewReports">🔗 National Scholarship Portal</a>
+                        <a href="procedure-guide.html" class="btn btn-secondary" data-i18n="home.applyChecklist">📋 Start Application Guide</a>
+                        <a href="know-difference.html" class="btn btn-success" data-i18n="home.checkStatus">✅ Check Your Status</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Important Blocks -->
-        <section class="important-blocks">
+        <!-- Scholarship Information Cards -->
+        <section class="scholarship-info">
             <div class="container">
-                <h3 data-i18n="home.scholarshipTypes">Scholarship Types</h3>
-                <div class="blocks-grid">
-                    <div class="info-card">
-                        <h4 data-i18n="home.postMatricTitle">Post-Matric Scholarship</h4>
-                        <p data-i18n="home.postMatricDesc">For students studying in classes XI and XII, and higher education</p>
-                        <a href="#" class="card-link" data-i18n="home.learnMore">Learn More</a>
+                <h3 data-i18n="home.scholarshipTypes">Available Scholarship Schemes</h3>
+                <div class="scholarship-grid">
+                    <div class="scholarship-card post-matric">
+                        <div class="card-header">
+                            <div class="card-icon">🎓</div>
+                            <h4 data-i18n="home.postMatricTitle">Post-Matric Scholarship</h4>
+                        </div>
+                        <div class="card-content">
+                            <p data-i18n="home.postMatricDesc">For students in Classes XI-XII and higher education (ITI, Diploma, Graduation, Post-Graduation)</p>
+                            <div class="card-details">
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.amount">Amount:</span>
+                                    <span class="detail-value">₹380-₹2,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.eligibility">Income Limit:</span>
+                                    <span class="detail-value">₹2.5 Lakh/year</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.deadline">Application:</span>
+                                    <span class="detail-value">Year Round Open</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://scholarships.gov.in/fresh/newstudentregistration" target="_blank" class="btn btn-primary" data-i18n="home.applyNow">Apply Now</a>
+                            <a href="know-difference.html" class="btn btn-secondary" data-i18n="home.learnMore">Learn More</a>
+                        </div>
                     </div>
-                    <div class="info-card">
-                        <h4 data-i18n="home.preMatricTitle">Pre-Matric Scholarship</h4>
-                        <p data-i18n="home.preMatricDesc">For students studying in classes IX and X</p>
-                        <a href="#" class="card-link" data-i18n="home.learnMore">Learn More</a>
+                    
+                    <div class="scholarship-card pre-matric">
+                        <div class="card-header">
+                            <div class="card-icon">📚</div>
+                            <h4 data-i18n="home.preMatricTitle">Pre-Matric Scholarship</h4>
+                        </div>
+                        <div class="card-content">
+                            <p data-i18n="home.preMatricDesc">For students studying in Classes IX and X in government and recognized schools</p>
+                            <div class="card-details">
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.amount">Amount:</span>
+                                    <span class="detail-value">₹225-₹700/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.eligibility">Income Limit:</span>
+                                    <span class="detail-value">₹2.5 Lakh/year</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.deadline">Application:</span>
+                                    <span class="detail-value">Year Round Open</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://scholarships.gov.in/fresh/newstudentregistration" target="_blank" class="btn btn-primary" data-i18n="home.applyNow">Apply Now</a>
+                            <a href="know-difference.html" class="btn btn-secondary" data-i18n="home.learnMore">Learn More</a>
+                        </div>
+                    </div>
+                    
+                    <div class="scholarship-card top-class">
+                        <div class="card-header">
+                            <div class="card-icon">🏆</div>
+                            <h4 data-i18n="home.topClassTitle">Top Class Education</h4>
+                        </div>
+                        <div class="card-content">
+                            <p data-i18n="home.topClassDesc">For pursuing quality higher education in notified institutions</p>
+                            <div class="card-details">
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.amount">Amount:</span>
+                                    <span class="detail-value">Full Fee + ₹3,000/month</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.eligibility">Income Limit:</span>
+                                    <span class="detail-value">₹8 Lakh/year</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span class="detail-label" data-i18n="home.seats">Seats:</span>
+                                    <span class="detail-value">Limited (Merit Based)</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-actions">
+                            <a href="https://scholarships.gov.in/topclass" target="_blank" class="btn btn-primary" data-i18n="home.applyNow">Apply Now</a>
+                            <a href="know-difference.html" class="btn btn-secondary" data-i18n="home.learnMore">Learn More</a>
+                        </div>
                     </div>
                 </div>
             </div>
