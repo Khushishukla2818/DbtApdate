@@ -44,79 +44,208 @@ class CommunityManager {
     }
 
     loadResources() {
-        // Mock resource data - in real app would fetch from server
+        // Comprehensive resource data for government scholarship portal
         this.resources = [
+            // Forms
             {
                 id: 1,
                 title: { en: 'Scholarship Application Form', hi: 'छात्रवृत्ति आवेदन फॉर्म' },
-                description: { en: 'Official application form for SC scholarships', hi: 'SC छात्रवृत्ति के लिए आधिकारिक आवेदन फॉर्म' },
+                description: { en: 'Official application form for SC scholarships with detailed instructions', hi: 'विस्तृत निर्देशों के साथ SC छात्रवृत्ति के लिए आधिकारिक आवेदन फॉर्म' },
                 type: 'forms',
                 language: 'both',
                 format: 'PDF',
                 size: '2.5 MB',
-                downloadUrl: '#',
+                downloadUrl: 'attached_assets/scholarship_application_form.txt',
                 previewUrl: '#',
-                tags: ['application', 'scholarship', 'form']
+                tags: ['application', 'scholarship', 'form', 'official']
             },
             {
                 id: 2,
-                title: { en: 'DBT Seeding Process Infographic', hi: 'DBT सीडिंग प्रक्रिया इन्फोग्राफिक' },
-                description: { en: 'Visual guide for Aadhaar seeding process', hi: 'आधार सीडिंग प्रक्रिया के लिए विज़ुअल गाइड' },
-                type: 'infographics',
-                language: 'both',
-                format: 'PNG',
-                size: '1.8 MB',
-                downloadUrl: '#',
-                previewUrl: '#',
-                tags: ['seeding', 'aadhaar', 'process']
-            },
-            {
-                id: 3,
-                title: { en: 'Income Certificate Template', hi: 'आय प्रमाण पत्र टेम्प्लेट' },
-                description: { en: 'Template for income certificate documentation', hi: 'आय प्रमाण पत्र दस्तावेज़ के लिए टेम्प्लेट' },
-                type: 'templates',
-                language: 'both',
-                format: 'DOC',
-                size: '456 KB',
-                downloadUrl: '#',
-                previewUrl: '#',
-                tags: ['income', 'certificate', 'template']
-            },
-            {
-                id: 4,
-                title: { en: 'Bank Account Seeding QR Code', hi: 'बैंक खाता सीडिंग QR कोड' },
-                description: { en: 'QR code for quick access to bank seeding portal', hi: 'बैंक सीडिंग पोर्टल के लिए QR कोड' },
-                type: 'qr',
-                language: 'both',
-                format: 'PNG',
-                size: '125 KB',
-                downloadUrl: '#',
-                previewUrl: '#',
-                tags: ['qr', 'bank', 'seeding']
-            },
-            {
-                id: 5,
                 title: { en: 'Eligibility Criteria Checklist', hi: 'पात्रता मापदंड चेकलिस्ट' },
-                description: { en: 'Complete checklist for scholarship eligibility', hi: 'छात्रवृत्ति पात्रता के लिए पूरी चेकलिस्ट' },
+                description: { en: 'Complete checklist for scholarship eligibility verification', hi: 'छात्रवृत्ति पात्रता सत्यापन के लिए पूरी चेकलिस्ट' },
                 type: 'forms',
                 language: 'both',
                 format: 'PDF',
                 size: '1.2 MB',
-                downloadUrl: '#',
+                downloadUrl: 'attached_assets/eligibility_checklist.txt',
                 previewUrl: '#',
-                tags: ['eligibility', 'checklist', 'criteria']
+                tags: ['eligibility', 'checklist', 'criteria', 'verification']
+            },
+            {
+                id: 3,
+                title: { en: 'Document Verification Form', hi: 'दस्तावेज़ सत्यापन फॉर्म' },
+                description: { en: 'Form for uploading and verifying required documents', hi: 'आवश्यक दस्तावेज़ अपलोड और सत्यापन के लिए फॉर्म' },
+                type: 'forms',
+                language: 'both',
+                format: 'PDF',
+                size: '1.8 MB',
+                downloadUrl: 'attached_assets/document_verification_form.txt',
+                previewUrl: '#',
+                tags: ['documents', 'verification', 'upload', 'required']
+            },
+            
+            // Templates
+            {
+                id: 4,
+                title: { en: 'Income Certificate Template', hi: 'आय प्रमाण पत्र टेम्प्लेट' },
+                description: { en: 'Standard template for income certificate documentation', hi: 'आय प्रमाण पत्र दस्तावेज़ के लिए मानक टेम्प्लेट' },
+                type: 'templates',
+                language: 'both',
+                format: 'DOC',
+                size: '456 KB',
+                downloadUrl: 'attached_assets/income_certificate_template.txt',
+                previewUrl: '#',
+                tags: ['income', 'certificate', 'template', 'documentation']
+            },
+            {
+                id: 5,
+                title: { en: 'Caste Certificate Template', hi: 'जाति प्रमाण पत्र टेम्प्लेट' },
+                description: { en: 'Template for SC caste certificate application', hi: 'SC जाति प्रमाण पत्र आवेदन के लिए टेम्प्लेट' },
+                type: 'templates',
+                language: 'both',
+                format: 'DOC',
+                size: '512 KB',
+                downloadUrl: 'attached_assets/caste_certificate_template.txt',
+                previewUrl: '#',
+                tags: ['caste', 'certificate', 'sc', 'template']
             },
             {
                 id: 6,
                 title: { en: 'SMS Alert Templates', hi: 'SMS अलर्ट टेम्प्लेट' },
-                description: { en: 'Pre-designed SMS templates for notifications', hi: 'सूचनाओं के लिए पूर्व-डिज़ाइन किए गए SMS टेम्प्लेट' },
+                description: { en: 'Pre-designed SMS templates for student notifications', hi: 'छात्र सूचनाओं के लिए पूर्व-डिज़ाइन किए गए SMS टेम्प्लेट' },
                 type: 'templates',
                 language: 'both',
                 format: 'TXT',
                 size: '15 KB',
-                downloadUrl: '#',
+                downloadUrl: 'attached_assets/sms_templates.txt',
                 previewUrl: '#',
-                tags: ['sms', 'alert', 'template']
+                tags: ['sms', 'alert', 'template', 'notifications']
+            },
+            {
+                id: 7,
+                title: { en: 'Press Release Template', hi: 'प्रेस रिलीज़ टेम्प्लेट' },
+                description: { en: 'Template for announcing scholarship programs', hi: 'छात्रवृत्ति कार्यक्रमों की घोषणा के लिए टेम्प्लेट' },
+                type: 'templates',
+                language: 'both',
+                format: 'DOC',
+                size: '320 KB',
+                downloadUrl: 'attached_assets/press_release_template.txt',
+                previewUrl: '#',
+                tags: ['press', 'release', 'announcement', 'media']
+            },
+            
+            // Infographics
+            {
+                id: 8,
+                title: { en: 'DBT Seeding Process Infographic', hi: 'DBT सीडिंग प्रक्रिया इन्फोग्राफिक' },
+                description: { en: 'Step-by-step visual guide for Aadhaar seeding process', hi: 'आधार सीडिंग प्रक्रिया के लिए चरणबद्ध विज़ुअल गाइड' },
+                type: 'infographics',
+                language: 'both',
+                format: 'PNG',
+                size: '1.8 MB',
+                downloadUrl: 'attached_assets/dbt_seeding_infographic.txt',
+                previewUrl: '#',
+                tags: ['seeding', 'aadhaar', 'process', 'visual']
+            },
+            {
+                id: 9,
+                title: { en: 'Scholarship Timeline Infographic', hi: 'छात्रवृत्ति समयसीमा इन्फोग्राफिक' },
+                description: { en: 'Visual timeline showing scholarship application deadlines', hi: 'छात्रवृत्ति आवेदन की समय सीमा दिखाने वाली विज़ुअल टाइमलाइन' },
+                type: 'infographics',
+                language: 'both',
+                format: 'PNG',
+                size: '2.1 MB',
+                downloadUrl: 'attached_assets/scholarship_timeline.txt',
+                previewUrl: '#',
+                tags: ['timeline', 'deadline', 'schedule', 'calendar']
+            },
+            {
+                id: 10,
+                title: { en: 'Document Requirements Chart', hi: 'दस्तावेज़ आवश्यकताएं चार्ट' },
+                description: { en: 'Visual chart of all required documents for application', hi: 'आवेदन के लिए सभी आवश्यक दस्तावेजों का विज़ुअल चार्ट' },
+                type: 'infographics',
+                language: 'both',
+                format: 'PNG',
+                size: '1.5 MB',
+                downloadUrl: 'attached_assets/document_requirements_chart.txt',
+                previewUrl: '#',
+                tags: ['documents', 'requirements', 'chart', 'checklist']
+            },
+            
+            // QR Codes
+            {
+                id: 11,
+                title: { en: 'NSP Portal QR Code', hi: 'NSP पोर्टल QR कोड' },
+                description: { en: 'QR code for quick access to National Scholarship Portal', hi: 'राष्ट्रीय छात्रवृत्ति पोर्टल के लिए QR कोड' },
+                type: 'qr',
+                language: 'both',
+                format: 'PNG',
+                size: '125 KB',
+                downloadUrl: 'attached_assets/nsp_portal_qr.txt',
+                previewUrl: '#',
+                tags: ['qr', 'nsp', 'portal', 'scholarship']
+            },
+            {
+                id: 12,
+                title: { en: 'Bank Account Seeding QR Code', hi: 'बैंक खाता सीडिंग QR कोड' },
+                description: { en: 'QR code for quick access to bank account seeding portal', hi: 'बैंक खाता सीडिंग पोर्टल के लिए QR कोड' },
+                type: 'qr',
+                language: 'both',
+                format: 'PNG',
+                size: '128 KB',
+                downloadUrl: 'attached_assets/bank_seeding_qr.txt',
+                previewUrl: '#',
+                tags: ['qr', 'bank', 'seeding', 'account']
+            },
+            {
+                id: 13,
+                title: { en: 'Help Desk Contact QR', hi: 'हेल्प डेस्क संपर्क QR' },
+                description: { en: 'QR code with help desk contact information', hi: 'हेल्प डेस्क संपर्क जानकारी के साथ QR कोड' },
+                type: 'qr',
+                language: 'both',
+                format: 'PNG',
+                size: '95 KB',
+                downloadUrl: 'attached_assets/help_desk_qr.txt',
+                previewUrl: '#',
+                tags: ['qr', 'help', 'contact', 'support']
+            },
+            
+            // Guidelines and Announcements
+            {
+                id: 14,
+                title: { en: 'Official Guidelines 2024-25', hi: 'आधिकारिक दिशानिर्देश 2024-25' },
+                description: { en: 'Complete guidelines for scholarship scheme 2024-25', hi: 'छात्रवृत्ति योजना 2024-25 के लिए पूर्ण दिशानिर्देश' },
+                type: 'guidelines',
+                language: 'both',
+                format: 'PDF',
+                size: '4.2 MB',
+                downloadUrl: 'attached_assets/official_guidelines_2024_25.txt',
+                previewUrl: '#',
+                tags: ['guidelines', 'official', '2024-25', 'rules']
+            },
+            {
+                id: 15,
+                title: { en: 'Recent Policy Updates', hi: 'हाल की नीति अपडेट' },
+                description: { en: 'Latest policy changes and updates for SC scholarships', hi: 'SC छात्रवृत्ति के लिए नीतिगत बदलाव और अपडेट' },
+                type: 'announcements',
+                language: 'both',
+                format: 'PDF',
+                size: '1.8 MB',
+                downloadUrl: 'attached_assets/policy_updates.txt',
+                previewUrl: '#',
+                tags: ['policy', 'updates', 'changes', 'announcements']
+            },
+            {
+                id: 16,
+                title: { en: 'FAQ Document', hi: 'FAQ दस्तावेज़' },
+                description: { en: 'Frequently asked questions and answers', hi: 'अक्सर पूछे जाने वाले प्रश्न और उत्तर' },
+                type: 'guidelines',
+                language: 'both',
+                format: 'PDF',
+                size: '2.1 MB',
+                downloadUrl: 'attached_assets/faq_document.txt',
+                previewUrl: '#',
+                tags: ['faq', 'questions', 'answers', 'help']
             }
         ];
 
@@ -206,7 +335,9 @@ class CommunityManager {
             forms: '📋',
             templates: '📝',
             infographics: '📊',
-            qr: '📱'
+            qr: '📱',
+            guidelines: '📖',
+            announcements: '📢'
         };
         return icons[type] || '📄';
     }
@@ -216,7 +347,9 @@ class CommunityManager {
             forms: { en: 'Form', hi: 'फॉर्म' },
             templates: { en: 'Template', hi: 'टेम्प्लेट' },
             infographics: { en: 'Infographic', hi: 'इन्फोग्राफिक' },
-            qr: { en: 'QR Code', hi: 'QR कोड' }
+            qr: { en: 'QR Code', hi: 'QR कोड' },
+            guidelines: { en: 'Guidelines', hi: 'दिशानिर्देश' },
+            announcements: { en: 'Announcements', hi: 'घोषणाएं' }
         };
         return labels[type] ? (labels[type][lang] || labels[type].en) : type;
     }
@@ -278,35 +411,85 @@ class CommunityManager {
                 return `
                     <div class="form-preview">
                         <h3>${resource.title[lang]}</h3>
-                        <div class="form-field">
-                            <label>Student Name / छात्र का नाम:</label>
-                            <input type="text" placeholder="Enter your name / अपना नाम दर्ज करें" disabled>
+                        <div class="form-section">
+                            <h4>${lang === 'hi' ? 'व्यक्तिगत जानकारी' : 'Personal Information'}</h4>
+                            <div class="form-field">
+                                <label>${lang === 'hi' ? 'छात्र का नाम' : 'Student Name'}:</label>
+                                <input type="text" placeholder="${lang === 'hi' ? 'अपना पूरा नाम दर्ज करें' : 'Enter your full name'}" disabled>
+                            </div>
+                            <div class="form-field">
+                                <label>${lang === 'hi' ? 'आधार संख्या' : 'Aadhaar Number'}:</label>
+                                <input type="text" placeholder="XXXX-XXXX-XXXX" disabled>
+                            </div>
+                            <div class="form-field">
+                                <label>${lang === 'hi' ? 'जन्म तिथि' : 'Date of Birth'}:</label>
+                                <input type="date" disabled>
+                            </div>
                         </div>
-                        <div class="form-field">
-                            <label>Aadhaar Number / आधार संख्या:</label>
-                            <input type="text" placeholder="XXXX-XXXX-XXXX" disabled>
+                        <div class="form-section">
+                            <h4>${lang === 'hi' ? 'बैंक विवरण' : 'Bank Details'}</h4>
+                            <div class="form-field">
+                                <label>${lang === 'hi' ? 'बैंक खाता संख्या' : 'Bank Account Number'}:</label>
+                                <input type="text" placeholder="${lang === 'hi' ? 'खाता संख्या दर्ज करें' : 'Enter account number'}" disabled>
+                            </div>
+                            <div class="form-field">
+                                <label>${lang === 'hi' ? 'IFSC कोड' : 'IFSC Code'}:</label>
+                                <input type="text" placeholder="ABCD0123456" disabled>
+                            </div>
                         </div>
-                        <div class="form-field">
-                            <label>Bank Account Number / बैंक खाता संख्या:</label>
-                            <input type="text" placeholder="Enter account number / खाता संख्या दर्ज करें" disabled>
+                        <p class="preview-note">${lang === 'hi' ? 'यह केवल पूर्वावलोकन है - पूरा फॉर्म डाउनलोड करें' : 'This is a preview only - download complete form'}</p>
+                    </div>
+                `;
+            case 'templates':
+                return `
+                    <div class="template-preview">
+                        <h3>${resource.title[lang]}</h3>
+                        <div class="template-content">
+                            <div class="letterhead">
+                                <h4>${lang === 'hi' ? 'सरकारी प्रमाण पत्र टेम्प्लेट' : 'Government Certificate Template'}</h4>
+                                <p>${lang === 'hi' ? 'भारत सरकार' : 'Government of India'}</p>
+                            </div>
+                            <div class="template-body">
+                                <p><strong>${lang === 'hi' ? 'प्रमाणित किया जाता है कि:' : 'This is to certify that:'}</strong></p>
+                                <p>[${lang === 'hi' ? 'नाम' : 'Name'}] _________________</p>
+                                <p>[${lang === 'hi' ? 'पिता का नाम' : 'Father\'s Name'}] _________________</p>
+                                <p>[${lang === 'hi' ? 'पता' : 'Address'}] _________________</p>
+                                <br>
+                                <p>${lang === 'hi' ? 'अधिकारी की मुहर एवं हस्ताक्षर' : 'Officer Seal & Signature'}</p>
+                            </div>
                         </div>
-                        <p class="preview-note">${lang === 'hi' ? 'यह केवल पूर्वावलोकन है' : 'This is a preview only'}</p>
+                        <p class="preview-note">${lang === 'hi' ? 'पूरा टेम्प्लेट डाउनलोड करें' : 'Download complete template'}</p>
                     </div>
                 `;
             case 'infographics':
                 return `
                     <div class="infographic-preview">
-                        <div class="step-visual">
-                            <h4>Step 1: Visit Bank</h4>
-                            <div class="step-icon">🏦</div>
-                        </div>
-                        <div class="step-visual">
-                            <h4>Step 2: Fill Form</h4>
-                            <div class="step-icon">📝</div>
-                        </div>
-                        <div class="step-visual">
-                            <h4>Step 3: Submit Documents</h4>
-                            <div class="step-icon">📄</div>
+                        <h3>${resource.title[lang]}</h3>
+                        <div class="infographic-steps">
+                            <div class="step-visual">
+                                <div class="step-number">1</div>
+                                <div class="step-icon">🏦</div>
+                                <h4>${lang === 'hi' ? 'बैंक में जाएं' : 'Visit Bank'}</h4>
+                                <p>${lang === 'hi' ? 'नजदीकी बैंक शाखा में जाएं' : 'Visit nearest bank branch'}</p>
+                            </div>
+                            <div class="step-visual">
+                                <div class="step-number">2</div>
+                                <div class="step-icon">📝</div>
+                                <h4>${lang === 'hi' ? 'फॉर्म भरें' : 'Fill Form'}</h4>
+                                <p>${lang === 'hi' ? 'आधार सीडिंग फॉर्म भरें' : 'Fill Aadhaar seeding form'}</p>
+                            </div>
+                            <div class="step-visual">
+                                <div class="step-number">3</div>
+                                <div class="step-icon">📄</div>
+                                <h4>${lang === 'hi' ? 'दस्तावेज़ जमा करें' : 'Submit Documents'}</h4>
+                                <p>${lang === 'hi' ? 'आधार कार्ड और पासबुक जमा करें' : 'Submit Aadhaar and passbook'}</p>
+                            </div>
+                            <div class="step-visual">
+                                <div class="step-number">4</div>
+                                <div class="step-icon">✅</div>
+                                <h4>${lang === 'hi' ? 'सत्यापन पूर्ण' : 'Verification Complete'}</h4>
+                                <p>${lang === 'hi' ? 'सीडिंग पूर्ण होने का SMS प्राप्त करें' : 'Receive SMS confirmation'}</p>
+                            </div>
                         </div>
                         <p class="preview-note">${lang === 'hi' ? 'पूर्ण इन्फोग्राफिक डाउनलोड करें' : 'Download complete infographic'}</p>
                     </div>
@@ -314,13 +497,79 @@ class CommunityManager {
             case 'qr':
                 return `
                     <div class="qr-preview">
+                        <h3>${resource.title[lang]}</h3>
                         <div class="qr-code">
                             <div class="qr-placeholder">
-                                <div class="qr-pattern"></div>
-                                QR Code
+                                <div class="qr-pattern">
+                                    ▅▅▅ ▅ ▅▅▅<br>
+                                    ▅ ▅ ▅ ▅ ▅<br>
+                                    ▅▅▅ ▅ ▅▅▅<br>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br>
+                                    ▅ ▅▅ ▅ ▅▅<br>
+                                    ▅▅▅ ▅ ▅▅▅
+                                </div>
                             </div>
                         </div>
-                        <p>${lang === 'hi' ? 'स्कैन करके बैंक पोर्टल पर जाएं' : 'Scan to visit bank portal'}</p>
+                        <div class="qr-info">
+                            <p><strong>${lang === 'hi' ? 'QR कोड की जानकारी:' : 'QR Code Information:'}</strong></p>
+                            <p>${lang === 'hi' ? '• तुरंत पहुंच के लिए स्कैन करें' : '• Scan for instant access'}</p>
+                            <p>${lang === 'hi' ? '• सभी मोबाइल डिवाइस के साथ संगत' : '• Compatible with all mobile devices'}</p>
+                            <p>${lang === 'hi' ? '• सुरक्षित सरकारी लिंक' : '• Secure government link'}</p>
+                        </div>
+                        <p class="preview-note">${lang === 'hi' ? 'उच्च गुणवत्ता QR कोड डाउनलोड करें' : 'Download high-quality QR code'}</p>
+                    </div>
+                `;
+            case 'guidelines':
+                return `
+                    <div class="guidelines-preview">
+                        <h3>${resource.title[lang]}</h3>
+                        <div class="guidelines-content">
+                            <div class="guidelines-section">
+                                <h4>${lang === 'hi' ? '1. पात्रता मापदंड' : '1. Eligibility Criteria'}</h4>
+                                <ul>
+                                    <li>${lang === 'hi' ? 'अनुसूचित जाति का प्रमाण पत्र आवश्यक' : 'SC certificate required'}</li>
+                                    <li>${lang === 'hi' ? 'पारिवारिक आय सीमा: ₹2.5 लाख प्रति वर्ष' : 'Family income limit: ₹2.5 lakhs per annum'}</li>
+                                    <li>${lang === 'hi' ? 'न्यूनतम 50% अंक आवश्यक' : 'Minimum 50% marks required'}</li>
+                                </ul>
+                            </div>
+                            <div class="guidelines-section">
+                                <h4>${lang === 'hi' ? '2. आवश्यक दस्तावेज़' : '2. Required Documents'}</h4>
+                                <ul>
+                                    <li>${lang === 'hi' ? 'आधार कार्ड की प्रति' : 'Copy of Aadhaar Card'}</li>
+                                    <li>${lang === 'hi' ? 'आय प्रमाण पत्र' : 'Income Certificate'}</li>
+                                    <li>${lang === 'hi' ? 'जाति प्रमाण पत्र' : 'Caste Certificate'}</li>
+                                    <li>${lang === 'hi' ? 'बैंक खाता विवरण' : 'Bank Account Details'}</li>
+                                </ul>
+                            </div>
+                            <div class="guidelines-section">
+                                <h4>${lang === 'hi' ? '3. आवेदन प्रक्रिया' : '3. Application Process'}</h4>
+                                <p>${lang === 'hi' ? 'NSP पोर्टल पर ऑनलाइन आवेदन करें और सभी आवश्यक दस्तावेज़ अपलोड करें।' : 'Apply online on NSP portal and upload all required documents.'}</p>
+                            </div>
+                        </div>
+                        <p class="preview-note">${lang === 'hi' ? 'पूर्ण दिशानिर्देश डाउनलोड करें' : 'Download complete guidelines'}</p>
+                    </div>
+                `;
+            case 'announcements':
+                return `
+                    <div class="announcements-preview">
+                        <h3>${resource.title[lang]}</h3>
+                        <div class="announcement-content">
+                            <div class="announcement-header">
+                                <div class="announcement-date">${lang === 'hi' ? 'दिनांक: 15 सितंबर 2024' : 'Date: September 15, 2024'}</div>
+                                <div class="announcement-ref">${lang === 'hi' ? 'संदर्भ संख्या: SC/2024/001' : 'Ref No: SC/2024/001'}</div>
+                            </div>
+                            <div class="announcement-body">
+                                <h4>${lang === 'hi' ? 'महत्वपूर्ण सूचना' : 'Important Notice'}</h4>
+                                <p>${lang === 'hi' ? 'अनुसूचित जाति छात्रवृत्ति योजना 2024-25 के लिए आवेदन प्रक्रिया शुरू की गई है।' : 'Application process for SC Scholarship Scheme 2024-25 has been initiated.'}</p>
+                                <h5>${lang === 'hi' ? 'मुख्य बिंदु:' : 'Key Points:'}</h5>
+                                <ul>
+                                    <li>${lang === 'hi' ? 'आवेदन की अंतिम तिथि: 31 अक्टूबर 2024' : 'Last date for application: October 31, 2024'}</li>
+                                    <li>${lang === 'hi' ? 'ऑनलाइन आवेदन केवल NSP पोर्टल पर' : 'Online application only on NSP portal'}</li>
+                                    <li>${lang === 'hi' ? 'सभी दस्तावेज़ PDF फॉर्मेट में अपलोड करें' : 'Upload all documents in PDF format'}</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="preview-note">${lang === 'hi' ? 'पूर्ण घोषणा डाउनलोड करें' : 'Download complete announcement'}</p>
                     </div>
                 `;
             default:
@@ -333,6 +582,7 @@ class CommunityManager {
                             <span>Format: ${resource.format}</span>
                             <span>Size: ${resource.size}</span>
                         </div>
+                        <p class="preview-note">${lang === 'hi' ? 'डाउनलोड करने के लिए क्लिक करें' : 'Click to download'}</p>
                     </div>
                 `;
         }

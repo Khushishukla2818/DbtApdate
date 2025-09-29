@@ -85,6 +85,20 @@
     "goHome": "Go to Home",
     "restart": "Restart Guide"
   },
+  "community": {
+    "title": "Community Outreach",
+    "intro": "Download forms, templates, infographics and other helpful resources",
+    "searchPlaceholder": "Search resources...",
+    "all": "All",
+    "forms": "Forms",
+    "templates": "Templates",
+    "infographics": "Infographics",
+    "qr": "QR Codes",
+    "guidelines": "Guidelines",
+    "announcements": "Announcements",
+    "noResources": "No resources found matching your criteria",
+    "close": "Close"
+  },
   "chatbot": {
     "title": "Help Assistant",
     "placeholder": "Ask about DBT, Aadhaar or Scholarships..."

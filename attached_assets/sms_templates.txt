@@ -1,0 +1,91 @@
+SMS ALERT TEMPLATES FOR SCHOLARSHIP NOTIFICATIONS
+छात्रवृत्ति सूचनाओं के लिए SMS अलर्ट टेम्प्लेट
+
+===================================================
+ENGLISH SMS TEMPLATES
+===================================================
+
+1. APPLICATION SUBMISSION CONFIRMATION
+Dear [NAME], your scholarship application [APP_ID] has been submitted successfully. Track status at scholarships.gov.in. -Govt of India
+
+2. DOCUMENT VERIFICATION REQUIRED
+Dear [NAME], document verification required for application [APP_ID]. Upload missing documents within 7 days. Visit NSP portal. -Govt of India
+
+3. APPLICATION APPROVED
+Congratulations [NAME]! Your scholarship application [APP_ID] is approved. Amount ₹[AMOUNT] will be transferred to your account. -Govt of India
+
+4. PAYMENT PROCESSED
+Dear [NAME], scholarship amount ₹[AMOUNT] has been credited to your account [ACCOUNT] on [DATE]. -Govt of India
+
+5. APPLICATION REJECTED
+Dear [NAME], your application [APP_ID] is rejected due to [REASON]. Reapply in next cycle with correct documents. -Govt of India
+
+6. DEADLINE REMINDER
+Dear [NAME], last 3 days to apply for SC scholarship 2024-25. Apply now at scholarships.gov.in. Don't miss this opportunity! -Govt of India
+
+7. AADHAAR SEEDING REQUIRED
+Dear [NAME], Aadhaar seeding with bank account is mandatory for scholarship. Visit your bank branch or use online banking. -Govt of India
+
+8. BANK ACCOUNT VERIFICATION
+Dear [NAME], verify your bank account for application [APP_ID]. Submit account proof within 5 days. Visit NSP portal. -Govt of India
+
+===================================================
+हिंदी SMS टेम्प्लेट
+===================================================
+
+1. आवेदन जमा करने की पुष्टि
+प्रिय [NAME], आपका छात्रवृत्ति आवेदन [APP_ID] सफलतापूर्वक जमा हो गया है। स्थिति देखें scholarships.gov.in पर। -भारत सरकार
+
+2. दस्तावेज़ सत्यापन आवश्यक
+प्रिय [NAME], आवेदन [APP_ID] के लिए दस्तावेज़ सत्यापन आवश्यक है। 7 दिन में गुम दस्तावेज़ अपलोड करें। NSP पोर्टल देखें। -भारत सरकार
+
+3. आवेदन स्वीकृत
+बधाई [NAME]! आपका छात्रवृत्ति आवेदन [APP_ID] स्वीकृत हो गया है। राशि ₹[AMOUNT] आपके खाते में स्थानांतरित की जाएगी। -भारत सरकार
+
+4. भुगतान संसाधित
+प्रिय [NAME], छात्रवृत्ति राशि ₹[AMOUNT] आपके खाते [ACCOUNT] में [DATE] को जमा की गई है। -भारत सरकार
+
+5. आवेदन अस्वीकृत
+प्रिय [NAME], आपका आवेदन [APP_ID] [REASON] के कारण अस्वीकृत है। सही दस्तावेजों के साथ अगले चक्र में पुनः आवेदन करें। -भारत सरकार
+
+6. समय सीमा अनुस्मारक
+प्रिय [NAME], SC छात्रवृत्ति 2024-25 के लिए आवेदन करने के लिए केवल 3 दिन बचे हैं। अभी आवेदन करें scholarships.gov.in पर। -भारत सरकार
+
+7. आधार सीडिंग आवश्यक
+प्रिय [NAME], छात्रवृत्ति के लिए आधार का बैंक खाते से सीडिंग अनिवार्य है। अपनी बैंक शाखा जाएं या ऑनलाइन बैंकिंग का उपयोग करें। -भारत सरकार
+
+8. बैंक खाता सत्यापन
+प्रिय [NAME], आवेदन [APP_ID] के लिए अपने बैंक खाते का सत्यापन करें। 5 दिन में खाते का प्रमाण जमा करें। NSP पोर्टल देखें। -भारत सरकार
+
+===================================================
+BULK SMS CAMPAIGN TEMPLATES
+बल्क SMS अभियान टेम्प्लेट
+===================================================
+
+1. AWARENESS CAMPAIGN
+Education empowers! Apply for SC scholarship 2024-25. Last date: Oct 31. Free education for all deserving students. scholarships.gov.in
+
+शिक्षा सशक्त बनाती है! SC छात्रवृत्ति 2024-25 के लिए आवेदन करें। अंतिम तिथि: 31 अक्टूबर। सभी योग्य छात्रों के लिए मुफ्त शिक्षा।
+
+2. FRAUD PREVENTION
+Beware of fake scholarship calls/websites. Govt scholarships are FREE. Never pay any fee. Report fraud: 1800-11-1111
+
+नकली छात्रवृत्ति कॉल/वेबसाइट से सावधान रहें। सरकारी छात्रवृत्ति मुफ्त है। कोई फीस न दें। धोखाधड़ी की रिपोर्ट करें: 1800-11-1111
+
+===================================================
+USAGE INSTRUCTIONS / उपयोग निर्देश
+===================================================
+
+1. Replace placeholders in square brackets with actual data
+2. Character limit: 160 characters for single SMS
+3. Use official government sender ID
+4. Include helpline number for queries
+5. Send during business hours (9 AM - 6 PM)
+6. Maintain delivery reports for compliance
+
+1. वर्गाकार कोष्ठक में प्लेसहोल्डर को वास्तविक डेटा से बदलें
+2. अक्षर सीमा: एकल SMS के लिए 160 अक्षर
+3. आधिकारिक सरकारी भेजने वाला ID उपयोग करें
+4. प्रश्नों के लिए हेल्पलाइन नंबर शामिल करें
+5. व्यावसायिक घंटों में भेजें (सुबह 9 - शाम 6)
+6. अनुपालन के लिए डिलीवरी रिपोर्ट बनाए रखें
