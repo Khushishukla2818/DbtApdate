@@ -131,8 +131,59 @@ class ProcedureGuideManager {
                             { en: 'Gather updated documents', hi: 'अपडेटेड दस्तावेज इकट्ठा करें' }
                         ],
                         action: 'status'
+                    },
+                    {
+                        title: { en: 'Contact Bank Branch', hi: 'बैंक शाखा से संपर्क करें' },
+                        content: { 
+                            en: 'Visit your bank branch or contact customer service to initiate re-seeding process.',
+                            hi: 'री-सीडिंग प्रक्रिया शुरू करने के लिए अपनी बैंक शाखा में जाएं या कस्टमर सर्विस से संपर्क करें।'
+                        },
+                        checklist: [
+                            { en: 'Visit nearest bank branch', hi: 'निकटतम बैंक शाखा में जाएं' },
+                            { en: 'Carry original Aadhaar card', hi: 'मूल आधार कार्ड ले जाएं' },
+                            { en: 'Explain the re-seeding requirement', hi: 'री-सीडिंग की आवश्यकता समझाएं' }
+                        ],
+                        action: 'form'
+                    },
+                    {
+                        title: { en: 'Verify Updated Details', hi: 'अपडेटेड विवरण सत्यापित करें' },
+                        content: { 
+                            en: 'Provide updated Aadhaar details if any changes have been made.',
+                            hi: 'यदि कोई बदलाव किया गया है तो अपडेटेड आधार विवरण प्रदान करें।'
+                        },
+                        checklist: [
+                            { en: 'Check name spelling matches', hi: 'नाम की वर्तनी मेल खाती है जांचें' },
+                            { en: 'Verify address is current', hi: 'पता वर्तमान है सत्यापित करें' },
+                            { en: 'Confirm mobile number', hi: 'मोबाइल नंबर की पुष्टि करें' }
+                        ],
+                        action: 'aadhaar'
+                    },
+                    {
+                        title: { en: 'Re-verify Bank Details', hi: 'बैंक विवरण पुनः सत्यापित करें' },
+                        content: { 
+                            en: 'Confirm your bank account details are correct and active.',
+                            hi: 'पुष्टि करें कि आपके बैंक खाते का विवरण सही और सक्रिय है।'
+                        },
+                        checklist: [
+                            { en: 'Account is active and operational', hi: 'खाता सक्रिय और परिचालित है' },
+                            { en: 'IFSC code is correct', hi: 'IFSC कोड सही है' },
+                            { en: 'Account holder name matches', hi: 'खाता धारक का नाम मेल खाता है' }
+                        ],
+                        action: 'bank'
+                    },
+                    {
+                        title: { en: 'Complete Re-Seeding', hi: 'री-सीडिंग पूरी करें' },
+                        content: { 
+                            en: 'Submit the re-seeding application and track the status.',
+                            hi: 'री-सीडिंग आवेदन जमा करें और स्थिति ट्रैक करें।'
+                        },
+                        checklist: [
+                            { en: 'Submit re-seeding form', hi: 'री-सीडिंग फॉर्म जमा करें' },
+                            { en: 'Get acknowledgment receipt', hi: 'पावती रसीद प्राप्त करें' },
+                            { en: 'Track status regularly', hi: 'नियमित रूप से स्थिति ट्रैक करें' }
+                        ],
+                        action: 'confirm'
                     }
-                    // Additional steps would follow similar pattern
                 ]
             },
             bankchange: {
@@ -150,8 +201,59 @@ class ProcedureGuideManager {
                             { en: 'New bank account proof', hi: 'नए बैंक खाते का प्रमाण' }
                         ],
                         action: 'documents'
+                    },
+                    {
+                        title: { en: 'Close Old Seeding', hi: 'पुराना सीडिंग बंद करें' },
+                        content: { 
+                            en: 'Inform your old bank about closing the Aadhaar seeding link.',
+                            hi: 'आधार सीडिंग लिंक बंद करने के बारे में अपने पुराने बैंक को सूचित करें।'
+                        },
+                        checklist: [
+                            { en: 'Visit old bank branch', hi: 'पुराने बैंक शाखा में जाएं' },
+                            { en: 'Submit delink application', hi: 'डिलिंक आवेदन जमा करें' },
+                            { en: 'Get confirmation receipt', hi: 'पुष्टि रसीद प्राप्त करें' }
+                        ],
+                        action: 'form'
+                    },
+                    {
+                        title: { en: 'Update Aadhaar Information', hi: 'आधार जानकारी अपडेट करें' },
+                        content: { 
+                            en: 'Ensure your Aadhaar details are current before linking to new bank.',
+                            hi: 'नए बैंक से लिंक करने से पहले सुनिश्चित करें कि आपका आधार विवरण वर्तमान है।'
+                        },
+                        checklist: [
+                            { en: 'Verify Aadhaar details are updated', hi: 'सत्यापित करें कि आधार विवरण अपडेटेड है' },
+                            { en: 'Check mobile number is linked', hi: 'जांचें कि मोबाइल नंबर लिंक है' },
+                            { en: 'Confirm address is current', hi: 'पुष्टि करें कि पता वर्तमान है' }
+                        ],
+                        action: 'aadhaar'
+                    },
+                    {
+                        title: { en: 'Link New Bank Account', hi: 'नया बैंक खाता लिंक करें' },
+                        content: { 
+                            en: 'Visit your new bank to link Aadhaar with the new account.',
+                            hi: 'नए खाते के साथ आधार लिंक करने के लिए अपने नए बैंक में जाएं।'
+                        },
+                        checklist: [
+                            { en: 'Visit new bank branch', hi: 'नई बैंक शाखा में जाएं' },
+                            { en: 'Submit fresh seeding form', hi: 'नया सीडिंग फॉर्म जमा करें' },
+                            { en: 'Provide all required documents', hi: 'सभी आवश्यक दस्तावेज प्रदान करें' }
+                        ],
+                        action: 'bank'
+                    },
+                    {
+                        title: { en: 'Verify & Complete', hi: 'सत्यापित करें और पूरा करें' },
+                        content: { 
+                            en: 'Confirm the bank change process is completed successfully.',
+                            hi: 'पुष्टि करें कि बैंक परिवर्तन प्रक्रिया सफलतापूर्वक पूरी हो गई है।'
+                        },
+                        checklist: [
+                            { en: 'Check new seeding status', hi: 'नई सीडिंग स्थिति जांचें' },
+                            { en: 'Test with small transaction', hi: 'छोटे लेनदेन के साथ परीक्षण करें' },
+                            { en: 'Update scholarship portal', hi: 'छात्रवृत्ति पोर्टल अपडेट करें' }
+                        ],
+                        action: 'confirm'
                     }
-                    // Additional steps would follow similar pattern
                 ]
             }
         };
