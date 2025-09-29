@@ -1,0 +1,246 @@
+{
+  "fresh": {
+    "title": { 
+      "en": "Fresh Aadhaar Seeding", 
+      "hi": "नई आधार सीडिंग" 
+    },
+    "description": {
+      "en": "Complete guide for first-time Aadhaar seeding with your bank account",
+      "hi": "अपने बैंक खाते के साथ पहली बार आधार सीडिंग के लिए पूरी गाइड"
+    },
+    "estimatedTime": {
+      "en": "15-20 minutes",
+      "hi": "15-20 मिनट"
+    },
+    "steps": [
+      {
+        "id": 1,
+        "title": { 
+          "en": "Visit Base Portal", 
+          "hi": "बेस पोर्टल पर जाएं" 
+        },
+        "content": { 
+          "en": "Start by visiting your bank's official website (ensure URL begins with https://) or locate your nearest bank branch. For major banks like SBI, HDFC, ICICI, and PNB, you can access their dedicated Aadhaar seeding portals directly.",
+          "hi": "अपने बैंक की आधिकारिक वेबसाइट (सुनिश्चित करें कि URL https:// से शुरू होता है) पर जाकर या अपनी निकटतम बैंक शाखा खोजकर शुरुआत करें। SBI, HDFC, ICICI, और PNB जैसे प्रमुख बैंकों के लिए, आप सीधे उनके आधार सीडिंग पोर्टल तक पहुंच सकते हैं।"
+        },
+        "checklist": [
+          { 
+            "en": "Verify bank's official website URL (check for https:// and official domain)", 
+            "hi": "बैंक की आधिकारिक वेबसाइट URL की पुष्टि करें (https:// और आधिकारिक डोमेन के लिए जांचें)" 
+          },
+          { 
+            "en": "Find \"Aadhaar Seeding\" or \"DBT\" section in online banking menu", 
+            "hi": "ऑनलाइन बैंकिंग मेनू में \"आधार सीडिंग\" या \"DBT\" सेक्शन खोजें" 
+          },
+          { 
+            "en": "Keep your Aadhaar card and bank account details ready", 
+            "hi": "अपना आधार कार्ड और बैंक खाता विवरण तैयार रखें" 
+          },
+          { 
+            "en": "Ensure your mobile number is linked with both Aadhaar and bank account", 
+            "hi": "सुनिश्चित करें कि आपका मोबाइल नंबर आधार और बैंक खाते दोनों से जुड़ा है" 
+          }
+        ],
+        "action": "portal",
+        "tips": [
+          {
+            "en": "Always verify bank website URL starts with https:// for security",
+            "hi": "सुरक्षा के लिए हमेशा जांच लें कि बैंक वेबसाइट URL https:// से शुरू होता है"
+          },
+          {
+            "en": "Major banks like SBI, HDFC, ICICI have dedicated Aadhaar seeding sections",
+            "hi": "SBI, HDFC, ICICI जैसे प्रमुख बैंकों के पास समर्पित आधार सीडिंग सेक्शन हैं"
+          },
+          {
+            "en": "Avoid using public WiFi for sensitive banking operations",
+            "hi": "संवेदनशील बैंकिंग कार्यों के लिए सार्वजनिक वाईफाई का उपयोग न करें"
+          }
+        ],
+        "estimatedTime": {
+          "en": "5-10 minutes",
+          "hi": "5-10 मिनट"
+        }
+      },
+      {
+        "id": 2,
+        "title": { 
+          "en": "Send Request", 
+          "hi": "अनुरोध भेजें" 
+        },
+        "content": { 
+          "en": "Access the Aadhaar seeding request form through your online banking portal. If visiting a branch, download and print the seeding form from the bank's website beforehand to save time. Most major banks provide both online and offline options.",
+          "hi": "अपने ऑनलाइन बैंकिंग पोर्टल के माध्यम से आधार सीडिंग अनुरोध फॉर्म तक पहुंचें। यदि शाखा जा रहे हैं, तो समय बचाने के लिए बैंक की वेबसाइट से पहले से सीडिंग फॉर्म डाउनलोड और प्रिंट करें। अधिकांश प्रमुख बैंक ऑनलाइन और ऑफलाइन दोनों विकल्प प्रदान करते हैं।"
+        },
+        "checklist": [
+          { 
+            "en": "Login to your online banking account or download the physical form", 
+            "hi": "अपने ऑनलाइन बैंकिंग खाते में लॉगिन करें या भौतिक फॉर्म डाउनलोड करें" 
+          },
+          { 
+            "en": "Read all terms and conditions thoroughly", 
+            "hi": "सभी नियम और शर्तों को ध्यान से पढ़ें" 
+          },
+          { 
+            "en": "Gather documents: Original Aadhaar card, bank passbook, and ID proof", 
+            "hi": "दस्तावेज इकट्ठा करें: मूल आधार कार्ड, बैंक पासबुक, और पहचान प्रमाण" 
+          },
+          { 
+            "en": "Note down the reference number for future tracking", 
+            "hi": "भविष्य में ट्रैकिंग के लिए रेफरेंस नंबर नोट करें" 
+          }
+        ],
+        "action": "form",
+        "tips": [
+          {
+            "en": "Save the form reference number immediately after submission",
+            "hi": "सबमिशन के तुरंत बाद फॉर्म रेफरेंस नंबर सेव करें"
+          },
+          {
+            "en": "Take a screenshot of the confirmation page for your records",
+            "hi": "अपने रिकॉर्ड के लिए कन्फर्मेशन पेज का स्क्रीनशॉट लें"
+          }
+        ],
+        "estimatedTime": {
+          "en": "3-5 minutes",
+          "hi": "3-5 मिनट"
+        }
+      },
+      {
+        "id": 3,
+        "title": { 
+          "en": "Provide Aadhaar Details", 
+          "hi": "आधार विवरण प्रदान करें" 
+        },
+        "content": { 
+          "en": "Enter your 12-digit Aadhaar number exactly as printed on your Aadhaar card. The system will auto-populate your name and address from UIDAI database. Verify that all personal details match exactly with your bank account records to avoid future complications.",
+          "hi": "अपना 12-अंकीय आधार नंबर बिल्कुल वैसा ही दर्ज करें जैसा आपके आधार कार्ड पर छपा है। सिस्टम UIDAI डेटाबेस से आपका नाम और पता ऑटो-पॉपुलेट कर देगा। भविष्य की जटिलताओं से बचने के लिए सत्यापित करें कि सभी व्यक्तिगत विवरण आपके बैंक खाते के रिकॉर्ड से बिल्कुल मेल खाते हैं।"
+        },
+        "checklist": [
+          { 
+            "en": "Type Aadhaar number without spaces or hyphens (12 continuous digits)", 
+            "hi": "आधार नंबर बिना स्पेस या हाइफन के टाइप करें (12 निरंतर अंक)" 
+          },
+          { 
+            "en": "Verify that name spelling exactly matches between Aadhaar and bank account", 
+            "hi": "सत्यापित करें कि नाम की वर्तनी आधार और बैंक खाते में बिल्कुल मेल खाती है" 
+          },
+          { 
+            "en": "Confirm current address is updated in both Aadhaar and bank records", 
+            "hi": "पुष्टि करें कि वर्तमान पता आधार और बैंक दोनों रिकॉर्ड में अपडेट है" 
+          },
+          { 
+            "en": "Double-check mobile number is same in Aadhaar and bank account", 
+            "hi": "दोबारा जांचें कि मोबाइल नंबर आधार और बैंक खाते में समान है" 
+          }
+        ],
+        "action": "aadhaar",
+        "tips": [
+          {
+            "en": "Use the Aadhaar number without any formatting (no spaces or dashes)",
+            "hi": "बिना किसी फॉर्मेटिंग के आधार नंबर का उपयोग करें (कोई स्पेस या डैश नहीं)"
+          },
+          {
+            "en": "If names don't match exactly, update your bank records first",
+            "hi": "यदि नाम बिल्कुल मेल नहीं खाते, तो पहले अपने बैंक रिकॉर्ड अपडेट करें"
+          }
+        ],
+        "estimatedTime": {
+          "en": "2-3 minutes",
+          "hi": "2-3 मिनट"
+        }
+      },
+      {
+        "id": 4,
+        "title": { 
+          "en": "Provide Bank Details", 
+          "hi": "बैंक विवरण प्रदान करें" 
+        },
+        "content": { 
+          "en": "Provide your complete bank account number (usually 10-18 digits) and the correct 11-character IFSC code. You can find both on your bank passbook, cheque book, or online banking statement. For joint accounts, ensure the primary account holder name matches the Aadhaar name.",
+          "hi": "अपना पूरा बैंक खाता नंबर (आमतौर पर 10-18 अंक) और सही 11-अक्षर IFSC कोड प्रदान करें। आप दोनों अपनी बैंक पासबुक, चेक बुक, या ऑनलाइन बैंकिंग स्टेटमेंट पर पा सकते हैं। संयुक्त खातों के लिए, सुनिश्चित करें कि प्राथमिक खाताधारक का नाम आधार नाम से मेल खाता है।"
+        },
+        "checklist": [
+          { 
+            "en": "Type complete account number from bank passbook (verify all digits)", 
+            "hi": "बैंक पासबुक से पूरा खाता नंबर टाइप करें (सभी अंकों की पुष्टि करें)" 
+          },
+          { 
+            "en": "Enter 11-character IFSC code exactly (first 4 letters are bank code)", 
+            "hi": "11-अक्षर IFSC कोड बिल्कुल सही दर्ज करें (पहले 4 अक्षर बैंक कोड हैं)" 
+          },
+          { 
+            "en": "Ensure account type matches (Savings/Current) with bank records", 
+            "hi": "सुनिश्चित करें कि खाता प्रकार (बचत/चालू) बैंक रिकॉर्ड से मेल खाता है" 
+          },
+          { 
+            "en": "Confirm account is active and operational (not dormant)", 
+            "hi": "पुष्टि करें कि खाता सक्रिय और परिचालन में है (निष्क्रिय नहीं)" 
+          }
+        ],
+        "action": "bank",
+        "tips": [
+          {
+            "en": "IFSC code format: First 4 letters (bank), 5th character is 0, last 6 are branch code",
+            "hi": "IFSC कोड फॉर्मेट: पहले 4 अक्षर (बैंक), 5वां करैक्टर 0 है, अंतिम 6 ब्रांच कोड हैं"
+          },
+          {
+            "en": "You can verify IFSC code on RBI website or bank's official site",
+            "hi": "आप RBI वेबसाइट या बैंक की आधिकारिक साइट पर IFSC कोड सत्यापित कर सकते हैं"
+          }
+        ],
+        "estimatedTime": {
+          "en": "2-3 minutes",
+          "hi": "2-3 मिनट"
+        }
+      },
+      {
+        "id": 5,
+        "title": { 
+          "en": "Confirm & Submit", 
+          "hi": "पुष्टि करें और जमा करें" 
+        },
+        "content": { 
+          "en": "Carefully review all entered information for accuracy. Once submitted, changes may require visiting the bank branch. You will receive a confirmation SMS and email with a reference number. The seeding process typically takes 2-7 working days to complete.",
+          "hi": "सटीकता के लिए सभी दर्ज जानकारी की सावधानीपूर्वक समीक्षा करें। एक बार जमा करने के बाद, बदलाव के लिए बैंक शाखा जाना पड़ सकता है। आपको रेफरेंस नंबर के साथ पुष्टिकरण SMS और ईमेल प्राप्त होगा। सीडिंग प्रक्रिया में आमतौर पर 2-7 कार्य दिवस लगते हैं।"
+        },
+        "checklist": [
+          { 
+            "en": "Triple-check all personal details, account number, and IFSC code", 
+            "hi": "सभी व्यक्तिगत विवरण, खाता नंबर, और IFSC कोड की तिन बार जांच करें" 
+          },
+          { 
+            "en": "Submit application and wait for OTP verification (if required)", 
+            "hi": "आवेदन जमा करें और OTP सत्यापन का इंतजार करें (यदि आवश्यक)" 
+          },
+          { 
+            "en": "Save confirmation receipt with reference number for tracking", 
+            "hi": "ट्रैकिंग के लिए रेफरेंस नंबर के साथ पुष्टि रसीद सेव करें" 
+          },
+          { 
+            "en": "Set reminder to check status after 7 days if no confirmation received", 
+            "hi": "यदि कोई पुष्टि नहीं मिली तो 7 दिन बाद स्थिति जांचने के लिए रिमाइंडर सेट करें" 
+          }
+        ],
+        "action": "confirm",
+        "tips": [
+          {
+            "en": "Keep the reference number safe - you'll need it to track your application",
+            "hi": "रेफरेंस नंबर को सुरक्षित रखें - आपको अपने आवेदन को ट्रैक करने के लिए इसकी आवश्यकता होगी"
+          },
+          {
+            "en": "SMS confirmation usually arrives within 24-48 hours of successful submission",
+            "hi": "SMS पुष्टि आमतौर पर सफल सबमिशन के 24-48 घंटे के भीतर आती है"
+          }
+        ],
+        "estimatedTime": {
+          "en": "3-5 minutes",
+          "hi": "3-5 मिनट"
+        },
+        "completionMessage": {
+          "en": "Congratulations! You have successfully completed the Aadhaar seeding process. You will receive SMS confirmation within 24-48 hours.",
+          "hi": "बधाई हो! आपने आधार सीडिंग प्रक्रिया सफलतापूर्वक पूरी कर ली है। आपको 24-48 घंटे के भीतर SMS पुष्टिकरण प्राप्त होगा।"
+        }
+      }
+    ]
+  }
+}

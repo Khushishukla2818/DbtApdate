@@ -9,8 +9,11 @@ class ProcedureGuideManager {
         this.init();
     }
 
-    init() {
-        this.loadStepData();
+    async init() {
+        // Set global reference for interactive elements
+        window.procedureGuide = this;
+        
+        await this.loadStepData();
         this.setupEventListeners();
         this.loadCase(this.currentCase);
     }
@@ -44,7 +47,23 @@ class ProcedureGuideManager {
         this.setupModalHandlers();
     }
 
-    loadStepData() {
+    async loadStepData() {
+        try {
+            // Load step data from external JSON file
+            const response = await fetch('data/procedures.json');
+            if (response.ok) {
+                this.stepData = await response.json();
+            } else {
+                // Fallback to basic step data
+                this.loadFallbackStepData();
+            }
+        } catch (error) {
+            console.error('Failed to load step data:', error);
+            this.loadFallbackStepData();
+        }
+    }
+
+    loadFallbackStepData() {
         this.stepData = {
             fresh: {
                 title: { en: 'Fresh Aadhaar Seeding', hi: 'नई आधार सीडिंग' },
@@ -293,6 +312,14 @@ class ProcedureGuideManager {
 
         const lang = window.i18nManager ? window.i18nManager.getCurrentLanguage() : 'en';
         const caseData = this.stepData[this.currentCase];
+        
+        // Check if caseData exists and has steps
+        if (!caseData || !caseData.steps) {
+            console.error('Case data not found for:', this.currentCase);
+            stepContent.innerHTML = '<p>Loading step data...</p>';
+            return;
+        }
+        
         const step = caseData.steps[this.currentStep - 1];
 
         if (!step) return;
@@ -306,33 +333,56 @@ class ProcedureGuideManager {
         }, 300);
 
         // Setup step-specific interactions
-        this.setupStepInteractions(step.action);
+        this.setupStepInteractions(step.action, step);
     }
 
     generateStepContent(step, lang) {
         const title = step.title[lang] || step.title.en;
         const content = step.content[lang] || step.content.en;
+        const description = step.description ? (step.description[lang] || step.description.en) : '';
+        const estimatedTime = step.estimatedTime ? (step.estimatedTime[lang] || step.estimatedTime.en) : '';
+        const tips = step.tips || [];
+
+        const baseHTML = `
+            <div class="step-header">
+                <h3>${title}</h3>
+                ${description ? `<div class="step-description">${description}</div>` : ''}
+                ${estimatedTime ? `<div class="estimated-time">⏱️ ${estimatedTime}</div>` : ''}
+            </div>
+            <div class="step-content-body">${content}</div>
+            ${tips.length > 0 ? `
+                <div class="step-tips">
+                    <h4>💡 Tips:</h4>
+                    <ul>
+                        ${tips.map(tip => `<li>${tip[lang] || tip.en}</li>`).join('')}
+                    </ul>
+                </div>
+            ` : ''}
+        `;
 
         switch (step.action) {
             case 'portal':
-                return `
-                    <div class="step-portal">
-                        <h3>${title}</h3>
-                        <p>${content}</p>
-                        <div class="portal-screenshot">
-                            <div style="background: #f0f0f0; padding: 2rem; text-align: center; border: 1px solid #ddd;">
-                                <h4>Bank Portal Screenshot</h4>
-                                <p>🏦 Bank Website Interface</p>
-                                <button class="portal-link">Visit Portal</button>
+                return baseHTML + `
+                    <div class="interactive-simulation">
+                        <h4>🏦 Interactive Bank Portal Simulation</h4>
+                        <div class="portal-mock">
+                            <div class="browser-frame">
+                                <div class="browser-header">
+                                    <span class="url-bar">🔒 https://bank-portal.gov.in</span>
+                                </div>
+                                <div class="portal-content">
+                                    <div class="bank-menu">
+                                        <button class="menu-item" onclick="window.procedureGuide.simulatePortalClick('home')">🏠 Home</button>
+                                        <button class="menu-item active" onclick="window.procedureGuide.simulatePortalClick('aadhaar')">🔗 Aadhaar Seeding</button>
+                                        <button class="menu-item" onclick="window.procedureGuide.simulatePortalClick('services')">📋 Services</button>
+                                    </div>
+                                    <div class="portal-main" id="portalMain">
+                                        <h4>Aadhaar Seeding Service</h4>
+                                        <p>Link your Aadhaar with your bank account for Direct Benefit Transfer</p>
+                                        <button class="btn btn-primary" onclick="window.procedureGuide.startPortalProcess()">Start Aadhaar Seeding</button>
+                                    </div>
+                                </div>
                             </div>
-                        </div>
-                        <div class="portal-instructions">
-                            <h4>Instructions:</h4>
-                            <ol>
-                                <li>Look for "Aadhaar Seeding" or "DBT" section</li>
-                                <li>Click on "Link Aadhaar" or similar option</li>
-                                <li>Proceed to the application form</li>
-                            </ol>
                         </div>
                     </div>
                 `;
@@ -364,23 +414,30 @@ class ProcedureGuideManager {
                 `;
             
             case 'aadhaar':
-                return `
-                    <div class="step-aadhaar">
-                        <h3>${title}</h3>
-                        <p>${content}</p>
-                        <div class="form-simulation">
-                            <div class="sim-disclaimer">This is a simulation for learning purposes</div>
-                            <div class="sim-form">
-                                <h4>Aadhaar Details</h4>
-                                <div class="form-group aadhaar-input">
-                                    <label>Aadhaar Number (12 digits):</label>
-                                    <input type="text" id="simulatedAadhaar" placeholder="XXXX-XXXX-XXXX" maxlength="14">
-                                    <div class="format-hint">Format: 1234-5678-9012</div>
-                                    <div class="validation-message" id="aadhaarValidation"></div>
-                                </div>
-                                <div class="form-group">
-                                    <label>Name as per Aadhaar:</label>
-                                    <input type="text" placeholder="Exactly as shown in Aadhaar" disabled>
+                return baseHTML + `
+                    <div class="interactive-simulation">
+                        <div class="sim-disclaimer">🎓 Interactive Learning Simulation</div>
+                        <div class="aadhaar-form-sim">
+                            <h4>📋 Aadhaar Details Entry</h4>
+                            <div class="form-group aadhaar-input">
+                                <label>Aadhaar Number (12 digits):</label>
+                                <input type="text" id="simulatedAadhaar" placeholder="XXXX-XXXX-XXXX" maxlength="14">
+                                <div class="format-hint">Format: 1234-5678-9012</div>
+                                <div class="validation-message" id="aadhaarValidation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Name as per Aadhaar:</label>
+                                <input type="text" id="aadhaarName" placeholder="Enter name exactly as on Aadhaar">
+                                <div class="validation-message" id="nameValidation"></div>
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth:</label>
+                                <input type="date" id="aadhaarDOB">
+                            </div>
+                            <div class="sim-progress">
+                                <div class="progress-item" id="aadhaarProgress">
+                                    <span class="progress-icon">⏳</span>
+                                    <span>Enter valid Aadhaar details to continue</span>
                                 </div>
                             </div>
                         </div>
