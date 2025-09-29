@@ -56,14 +56,50 @@
             
             <div class="knowledge-tabs">
                 <div class="tab-nav">
-                    <button class="tab-button active" data-tab="aadhaar-linking" data-i18n="knowledge.aadhaarLinking">Aadhaar Linking</button>
+                    <button class="tab-button active" data-tab="status-checker" data-i18n="knowledge.statusChecker">Check Status</button>
+                    <button class="tab-button" data-tab="aadhaar-linking" data-i18n="knowledge.aadhaarLinking">Aadhaar Linking</button>
                     <button class="tab-button" data-tab="dbt-enabled" data-i18n="knowledge.dbtEnabled">DBT Enabled</button>
                     <button class="tab-button" data-tab="aadhaar-seeding" data-i18n="knowledge.aadhaarSeeding">Aadhaar Seeding</button>
                     <button class="tab-button" data-tab="myths-faqs" data-i18n="knowledge.mythsFaqs">Myths & FAQs</button>
                 </div>
                 
                 <div class="tab-content">
-                    <div class="tab-panel active" id="aadhaar-linking">
+                    <div class="tab-panel active" id="status-checker">
+                        <h3 data-i18n="knowledge.statusCheckerTitle">Check Your Aadhaar Seeding Status</h3>
+                        <div class="knowledge-card">
+                            <p data-i18n="knowledge.statusCheckerDesc">Enter your Aadhaar number to check your DBT seeding status and scholarship eligibility.</p>
+                            
+                            <div class="status-checker-form">
+                                <div class="form-group">
+                                    <label for="aadhaarInput" data-i18n="knowledge.aadhaarLabel">Aadhaar Number (12 digits)</label>
+                                    <input type="text" id="aadhaarInput" maxlength="14" placeholder="XXXX XXXX XXXX" class="form-control">
+                                    <span class="error-message" id="aadhaarError"></span>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="bankAccount" data-i18n="knowledge.bankAccountLabel">Bank Account Number (Optional)</label>
+                                    <input type="text" id="bankAccount" placeholder="Enter account number" class="form-control">
+                                </div>
+                                
+                                <button type="button" id="checkStatusBtn" class="btn btn-primary" data-i18n="knowledge.checkStatus">Check Status</button>
+                            </div>
+                            
+                            <div class="status-result" id="statusResult" style="display: none;">
+                                <div class="status-card">
+                                    <h4 data-i18n="knowledge.statusResultTitle">Status Result</h4>
+                                    <div class="status-info" id="statusInfo">
+                                        <!-- Dynamic status content -->
+                                    </div>
+                                    <div class="status-actions">
+                                        <button class="btn btn-secondary" id="downloadReport" data-i18n="knowledge.downloadReport">Download Report</button>
+                                        <button class="btn btn-success" id="proceedToGuide" data-i18n="knowledge.proceedToGuide">Proceed to Guide</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-panel" id="aadhaar-linking">
                         <h3 data-i18n="knowledge.aadhaarLinkingTitle">What is Aadhaar Linking?</h3>
                         <div class="knowledge-card">
                             <p data-i18n="knowledge.aadhaarLinkingDesc">Aadhaar linking is the process of connecting your Aadhaar number with your bank account or other services.</p>

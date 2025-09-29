@@ -507,3 +507,185 @@
         flex-direction: column;
     }
 }
+
+/* Status Checker Styles */
+.status-checker-form {
+    background: var(--gov-light-gray);
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-lg) 0;
+}
+
+.form-group {
+    margin-bottom: var(--spacing-lg);
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: var(--spacing-sm);
+    font-weight: 500;
+    color: var(--gov-text);
+}
+
+.form-control {
+    width: 100%;
+    padding: var(--spacing-md);
+    border: 2px solid var(--gov-medium-gray);
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+}
+
+.form-control:focus {
+    outline: none;
+    border-color: var(--gov-orange);
+    box-shadow: 0 0 0 2px rgba(255, 153, 51, 0.2);
+}
+
+.form-control.error {
+    border-color: #dc3545;
+}
+
+.error-message {
+    display: none;
+    color: #dc3545;
+    font-size: var(--font-size-small);
+    margin-top: var(--spacing-xs);
+}
+
+/* Status Result Styles */
+.status-result {
+    margin-top: var(--spacing-xl);
+    border: 1px solid var(--gov-medium-gray);
+    border-radius: var(--border-radius);
+    overflow: hidden;
+}
+
+.status-card {
+    padding: var(--spacing-lg);
+}
+
+.status-summary {
+    padding: var(--spacing-lg);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-md);
+}
+
+.status-summary.success {
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: #155724;
+}
+
+.status-summary.warning {
+    background-color: #fff3cd;
+    border: 1px solid #ffeaa7;
+    color: #856404;
+}
+
+.status-summary.error {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+}
+
+.status-badge {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+}
+
+.status-icon {
+    font-size: 24px;
+}
+
+.status-label {
+    font-size: var(--font-size-large);
+    font-weight: bold;
+}
+
+.status-details {
+    display: grid;
+    gap: var(--spacing-sm);
+}
+
+.status-details p {
+    margin: 0;
+    padding: var(--spacing-xs) 0;
+    border-bottom: 1px solid rgba(0,0,0,0.1);
+}
+
+.status-details p:last-child {
+    border-bottom: none;
+}
+
+.status-message {
+    background-color: var(--gov-light-gray);
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin: var(--spacing-md) 0;
+}
+
+.next-steps {
+    margin-top: var(--spacing-md);
+}
+
+.next-steps h5 {
+    color: var(--gov-blue);
+    margin-bottom: var(--spacing-sm);
+}
+
+.next-steps ul {
+    padding-left: var(--spacing-lg);
+}
+
+.next-steps li {
+    margin-bottom: var(--spacing-xs);
+    line-height: 1.4;
+}
+
+.status-actions {
+    display: flex;
+    gap: var(--spacing-md);
+    margin-top: var(--spacing-lg);
+    flex-wrap: wrap;
+}
+
+/* Loading Spinner */
+.loading-spinner {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 2px solid var(--gov-white);
+    border-radius: 50%;
+    border-top: 2px solid transparent;
+    animation: spin 1s linear infinite;
+    margin-right: var(--spacing-xs);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Mobile Responsiveness for Status Checker */
+@media (max-width: 768px) {
+    .status-checker-form {
+        padding: var(--spacing-md);
+    }
+    
+    .status-actions {
+        flex-direction: column;
+    }
+    
+    .status-actions .btn {
+        width: 100%;
+    }
+    
+    .status-badge {
+        flex-direction: column;
+        text-align: center;
+        gap: var(--spacing-sm);
+    }
+}

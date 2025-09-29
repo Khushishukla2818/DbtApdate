@@ -1,7 +1,7 @@
 // Knowledge page functionality for tabs and FAQ search
 class KnowledgeManager {
     constructor() {
-        this.currentTab = 'aadhaar-linking';
+        this.currentTab = 'status-checker';
         this.faqs = [];
         this.init();
     }
@@ -10,6 +10,7 @@ class KnowledgeManager {
         this.setupTabNavigation();
         this.loadFAQs();
         this.setupFAQSearch();
+        this.setupStatusChecker();
     }
 
     setupTabNavigation() {
@@ -212,6 +213,276 @@ class KnowledgeManager {
 
             item.style.display = matches ? 'block' : 'none';
         });
+    }
+
+    setupStatusChecker() {
+        const aadhaarInput = document.getElementById('aadhaarInput');
+        const checkStatusBtn = document.getElementById('checkStatusBtn');
+        const statusResult = document.getElementById('statusResult');
+        const downloadReport = document.getElementById('downloadReport');
+        const proceedToGuide = document.getElementById('proceedToGuide');
+
+        if (!aadhaarInput || !checkStatusBtn) return;
+
+        // Format Aadhaar input as user types
+        aadhaarInput.addEventListener('input', (e) => {
+            let value = e.target.value.replace(/\s/g, '').replace(/\D/g, '');
+            if (value.length > 12) value = value.slice(0, 12);
+            
+            // Format with spaces: XXXX XXXX XXXX
+            const formatted = value.replace(/(\d{4})(?=\d)/g, '$1 ');
+            e.target.value = formatted;
+            
+            // Clear previous errors
+            this.clearError('aadhaarError');
+        });
+
+        // Check status button click
+        checkStatusBtn.addEventListener('click', () => {
+            this.checkAadhaarStatus();
+        });
+
+        // Download report functionality
+        if (downloadReport) {
+            downloadReport.addEventListener('click', () => {
+                this.downloadStatusReport();
+            });
+        }
+
+        // Proceed to guide functionality
+        if (proceedToGuide) {
+            proceedToGuide.addEventListener('click', () => {
+                window.location.href = 'procedure-guide.html';
+            });
+        }
+    }
+
+    checkAadhaarStatus() {
+        const aadhaarInput = document.getElementById('aadhaarInput');
+        const bankAccountInput = document.getElementById('bankAccount');
+        const statusResult = document.getElementById('statusResult');
+        const statusInfo = document.getElementById('statusInfo');
+        
+        const aadhaarNumber = aadhaarInput.value.replace(/\s/g, '');
+        
+        // Validate Aadhaar number
+        if (!this.validateAadhaar(aadhaarNumber)) {
+            return;
+        }
+
+        // Show loading state
+        this.showLoading('checkStatusBtn');
+
+        // Simulate API call with delay
+        setTimeout(() => {
+            const mockStatus = this.generateMockStatus(aadhaarNumber, bankAccountInput.value);
+            this.displayStatusResult(mockStatus);
+            statusResult.style.display = 'block';
+            this.hideLoading('checkStatusBtn');
+        }, 2000);
+    }
+
+    validateAadhaar(aadhaarNumber) {
+        const errorElement = document.getElementById('aadhaarError');
+        
+        if (!aadhaarNumber) {
+            this.showError('aadhaarError', 'Aadhaar number is required');
+            return false;
+        }
+        
+        if (aadhaarNumber.length !== 12) {
+            this.showError('aadhaarError', 'Aadhaar number must be 12 digits');
+            return false;
+        }
+        
+        if (!/^\d{12}$/.test(aadhaarNumber)) {
+            this.showError('aadhaarError', 'Aadhaar number should contain only digits');
+            return false;
+        }
+
+        return true;
+    }
+
+    generateMockStatus(aadhaarNumber, bankAccount) {
+        // Generate different statuses based on Aadhaar number for demo
+        const lastDigit = parseInt(aadhaarNumber.slice(-1));
+        const statusTypes = ['seeded', 'not_seeded', 'pending', 'mismatch'];
+        const statusType = statusTypes[lastDigit % 4];
+
+        const bankNames = ['State Bank of India', 'HDFC Bank', 'ICICI Bank', 'Punjab National Bank', 'Bank of Baroda'];
+        const randomBank = bankNames[lastDigit % bankNames.length];
+
+        const baseStatus = {
+            aadhaarNumber: aadhaarNumber.slice(0, 4) + ' XXXX XXXX',
+            bankAccount: bankAccount ? bankAccount.slice(0, 4) + 'XXXXXXXX' : null,
+            bankName: randomBank,
+            lastUpdated: new Date().toLocaleDateString('en-IN'),
+            scholarshipEligible: false
+        };
+
+        switch (statusType) {
+            case 'seeded':
+                return {
+                    ...baseStatus,
+                    status: 'seeded',
+                    statusText: 'Successfully Seeded',
+                    statusColor: 'success',
+                    scholarshipEligible: true,
+                    message: 'Your Aadhaar is successfully linked with your bank account. You are eligible for DBT scholarship transfers.',
+                    nextSteps: ['Apply for scholarship online', 'Keep your bank account active', 'Update any changes in bank details']
+                };
+            
+            case 'pending':
+                return {
+                    ...baseStatus,
+                    status: 'pending',
+                    statusText: 'Seeding Pending',
+                    statusColor: 'warning',
+                    message: 'Your Aadhaar seeding request is under process. It may take 2-3 working days to complete.',
+                    nextSteps: ['Wait for confirmation SMS', 'Check status after 3 days', 'Contact bank if delayed']
+                };
+            
+            case 'mismatch':
+                return {
+                    ...baseStatus,
+                    status: 'mismatch',
+                    statusText: 'Details Mismatch',
+                    statusColor: 'error',
+                    message: 'There is a mismatch in your Aadhaar details with bank records. Please visit your bank branch.',
+                    nextSteps: ['Visit bank branch with Aadhaar card', 'Verify and update details', 'Re-submit seeding request']
+                };
+            
+            default:
+                return {
+                    ...baseStatus,
+                    status: 'not_seeded',
+                    statusText: 'Not Seeded',
+                    statusColor: 'error',
+                    message: 'Your Aadhaar is not linked with any bank account. Please complete the seeding process.',
+                    nextSteps: ['Visit your bank branch', 'Submit Aadhaar seeding form', 'Follow our step-by-step guide']
+                };
+        }
+    }
+
+    displayStatusResult(status) {
+        const statusInfo = document.getElementById('statusInfo');
+        const lang = window.i18nManager ? window.i18nManager.getCurrentLanguage() : 'en';
+        
+        const statusHTML = `
+            <div class="status-summary ${status.statusColor}">
+                <div class="status-badge">
+                    <span class="status-icon">${this.getStatusIcon(status.status)}</span>
+                    <span class="status-label">${status.statusText}</span>
+                </div>
+                <div class="status-details">
+                    <p><strong>Aadhaar:</strong> ${status.aadhaarNumber}</p>
+                    <p><strong>Bank:</strong> ${status.bankName}</p>
+                    ${status.bankAccount ? `<p><strong>Account:</strong> ${status.bankAccount}</p>` : ''}
+                    <p><strong>Last Updated:</strong> ${status.lastUpdated}</p>
+                    <p><strong>Scholarship Eligible:</strong> ${status.scholarshipEligible ? 'Yes' : 'No'}</p>
+                </div>
+            </div>
+            
+            <div class="status-message">
+                <p>${status.message}</p>
+            </div>
+            
+            <div class="next-steps">
+                <h5>Next Steps:</h5>
+                <ul>
+                    ${status.nextSteps.map(step => `<li>${step}</li>`).join('')}
+                </ul>
+            </div>
+        `;
+        
+        statusInfo.innerHTML = statusHTML;
+        
+        // Store status for report generation
+        this.currentStatus = status;
+    }
+
+    getStatusIcon(status) {
+        const icons = {
+            'seeded': '✅',
+            'pending': '⏳',
+            'not_seeded': '❌',
+            'mismatch': '⚠️'
+        };
+        return icons[status] || '❓';
+    }
+
+    downloadStatusReport() {
+        if (!this.currentStatus) return;
+
+        const reportContent = this.generateReportContent(this.currentStatus);
+        const blob = new Blob([reportContent], { type: 'text/plain' });
+        const url = window.URL.createObjectURL(blob);
+        
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = `aadhaar-status-report-${Date.now()}.txt`;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+    }
+
+    generateReportContent(status) {
+        return `
+AADHAAR SEEDING STATUS REPORT
+==============================
+
+Aadhaar Number: ${status.aadhaarNumber}
+Bank Name: ${status.bankName}
+Account Number: ${status.bankAccount || 'Not provided'}
+Status: ${status.statusText}
+Scholarship Eligible: ${status.scholarshipEligible ? 'Yes' : 'No'}
+Last Updated: ${status.lastUpdated}
+
+Message: ${status.message}
+
+Next Steps:
+${status.nextSteps.map((step, index) => `${index + 1}. ${step}`).join('\n')}
+
+This report was generated on ${new Date().toLocaleString('en-IN')}
+For assistance, call National Helpdesk: 1800-11-1111
+
+Note: This is an official status report for DBT scholarship scheme.
+Keep this report for your records.
+        `;
+    }
+
+    showError(elementId, message) {
+        const errorElement = document.getElementById(elementId);
+        if (errorElement) {
+            errorElement.textContent = message;
+            errorElement.style.display = 'block';
+        }
+    }
+
+    clearError(elementId) {
+        const errorElement = document.getElementById(elementId);
+        if (errorElement) {
+            errorElement.textContent = '';
+            errorElement.style.display = 'none';
+        }
+    }
+
+    showLoading(buttonId) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.disabled = true;
+            button.innerHTML = '<span class="loading-spinner"></span> Checking...';
+        }
+    }
+
+    hideLoading(buttonId) {
+        const button = document.getElementById(buttonId);
+        if (button) {
+            button.disabled = false;
+            const lang = window.i18nManager ? window.i18nManager.getCurrentLanguage() : 'en';
+            button.innerHTML = lang === 'hi' ? 'स्थिति जांचें' : 'Check Status';
+        }
     }
 }
 
