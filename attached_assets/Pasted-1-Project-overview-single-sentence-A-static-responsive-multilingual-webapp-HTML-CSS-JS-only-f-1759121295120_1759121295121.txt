@@ -1,0 +1,307 @@
+1. Project overview (single-sentence)
+A static, responsive multilingual webapp (HTML/CSS/JS only) for “Scholarship Scheme for SC students” with: multilingual content, a multilingual chatbot (AI or rule-based), video guides (language-specific), quizzes, interactive step-by-step Aadhaar→DBT seeding learning flows with progress bars, a Community Outreach library (documents + previews + search + downloads), and an Administrator panel for SMS campaigns + dashboard metrics.
+3. Global design + layout rules
+•	Responsive grid: 12-col CSS grid (use simple CSS variables for spacing and fonts).
+•	Accessibility: semantic HTML (header/main/nav/footer), aria-* attributes, keyboard focus styles.
+•	SEO: <meta> for languages, <html lang="..."> changed on language switch.
+•	Language switcher available in top nav (persist choice in localStorage).
+•	All static content driven by JSON (/i18n/*.json and /data/*.json) so AI or builder can generate pages from those files.
+•	Right-to-left support toggle (add dir="rtl" when Arabic/Hebrew selected).
+
+4. i18n (multilingual) design
+Files: /i18n/en.json, /i18n/hi.json, etc.
+Structure (example en.json):
+{
+  "site": {
+    "title": "DBTGuide",
+    "home": "Home",
+    "knowDifference": "Know the Difference",
+    "procedureGuide": "Procedure Guide",
+    "community": "Community Outreach",
+    "videos": "Video Tutorials",
+    "quiz": "Quiz",
+    "admin": "Administrator"
+  },
+  "home": {
+    "heroTitle": "Scholarship scheme for SC students",
+    "viewReports": "View Official Reports",
+    "recentUpdates": "Recent Updates & Achievements"
+  },
+  "chatbot": {
+    "placeholder": "Ask about DBT, Aadhaar or Scholarships..."
+  },
+  "messages": {
+    "download": "Download",
+    "preview": "Preview"
+  },
+  "smsTemplates": {
+    "initial": "Dear {{name}}, check your DBT seeding status.",
+    "urgent": "Urgent: Please complete your Aadhaar seeding.",
+    "success": "Success: Your scholarship has been released."
+  }
+}
+JS behavior:
+•	i18n.js loads language JSON on page load or switch and replaces data-i18n attributes in DOM.
+•	Persist choice via localStorage.lang.
+•	Always update <html lang> and <meta name="description"> where relevant.
+________________________________________
+5. Data files (examples)
+/data/videos.json
+[
+  { "id":"vid1", "title":{"en":"How to seed Aadhaar","hi":"आधार सीडिंग कैसे करें"}, "lang":"hi,en", "youtubeId":"YOUTUBE_ID", "tags":["procedure","seeding"] }
+]
+/data/docs.json
+[
+  { "id":"form1", "title":{"en":"Bank Seeding Form","hi":"बैंक सीडिंग फॉर्म"}, "file":"assets/docs/bank_form.pdf", "type":"pdf", "tags":["form","bank"] }
+]
+/data/quizzes.json
+[
+  { "id":"q1", "lang":"en,hi", "title":{"en":"Aadhaar basics","hi":"आधार क्या है"}, "questions":[
+     { "q":{"en":"What is DBT?","hi":"DBT क्या है?"}, "options":[{"a":"Direct Benefit Transfer","b":"..."}], "correct":0 }
+  ] }
+]
+________________________________________
+6. Homepage layout & behavior
+Sections (top-to-bottom):
+1.	Header: logo + lang switcher + nav
+2.	Hero: title (from i18n), CTA buttons: (View PIB report 23-24), (Apply Checklist)
+3.	Important blocks (grid of cards):
+o	Post-Matric Scholarship (short summary + link)
+o	Pre-Matric Scholarship (short summary + link)
+o	Recent updates and achievements (carousel)
+o	4 feature blocks: Know difference, Step-by-step guide, Video tutorial, Community outreach (4 clickable cards that go to respective pages)
+4.	Quick Chat widget (fixed bottom-right)
+5.	Footer: contact, social, disclaimer
+Behavior:
+•	PIB reports: links to PDF stored in assets/docs and a small popup showing publish date & "View / Download".
+•	Recent updates: dynamic list from data/updates.json.
+________________________________________
+7. Know Difference page (content & interactions)
+Sections:
+•	Short intro
+•	Tabs or accordion: Aadhaar linking vs DBT enabled vs Aadhaar seeding vs Myths & FAQs
+•	Each accordion item: headline, short explanation, examples, and “Learn More” → opens procedure guide at relevant step.
+•	FAQ: searchable accordion.
+Data source: i18n.json + data/knowledge.json.
+________________________________________
+8. Procedure Guide (core interactive module)
+This is the central interactive learning flow (fresh seeding / reseeding / bank change).
+Core UI:
+•	Breadcrumb + Title
+•	Top progress bar with 5 steps: Base Portal → Send Request → Aadhaar Details → Bank Details → Confirm & Submit.
+o	Visual: horizontal bar with numbers and labels, current step highlighted.
+•	Below progress bar: step content panel that changes per step.
+•	Side checklist/actions: list of actions you mentioned (Open browser -> Navigate -> Enter details -> Confirm).
+Flow details:
+•	User chooses case at top: Fresh Seeding | Re-Seeding | Bank Change — each has its own prefilled tutorial steps.
+•	When user clicks Start Learning:
+o	Progress bar step 1 becomes active.
+o	Each step has Next & Back buttons.
+o	On Next, the progress increments and side checklist marks the corresponding action done.
+o	Save progress in localStorage so reloads persist. When all steps complete, show completion modal with Go to Home and Restart buttons.
+Step content examples:
+•	Step 1 (Base Portal): show screenshot, link to NPCI or bank’s base portal (open in new tab), and a short checklist button Open Portal.
+•	Step 2 (Send Request): form simulation: sample request form with prefilled sample data for practice (NOT real submission).
+•	Step 3 (Aadhaar): UI to practice entering Aadhaar (masked), validate format (12 digits).
+•	Step 4 (Bank): dropdown of bank names (sample), account number field, IFSC validate.
+•	Step 5 (Confirm & Submit): show summary, Confirm button → simulate success/failure (use seeded random or admin override).
+Re-seeding & Bank change: same structure but different helper text and required doc checklist.
+________________________________________
+9. Community Outreach (Infographics, forms, templates, QR, preview & download)
+Page layout:
+•	Top search bar (search title, tags, type).
+•	Filter chips: Forms, Templates, Infographics, QR, All.
+•	Grid of cards with thumbnail, title, language badges, Preview & Download buttons.
+Preview behavior:
+•	PDFs open in a modal with embedded <iframe> (or PDF.js fallback).
+•	Images open full-size modal with captions.
+•	QR items show large QR image + Copy link + Download PNG.
+Download behavior:
+•	Use anchor download attribute or FileSaver.js for cross-browser reliability.
+Search functionality (JS):
+•	Live filtering on the client from data/docs.json.
+•	Search query matches title (multi-lingual), tags, or description.
+•	Show counts and pagination if >20 results.
+Admin upload (optional):
+•	For static deployment, provide a mock “upload” that only stores meta in localStorage. For real upload, the admin must use a backend or GitHub PR flow.
+________________________________________
+10. Video Tutorials page
+Design:
+•	Video tiles: thumbnail, language badges, short description, Play button.
+•	Language filter (e.g., show only Hindi videos).
+•	When user clicks a tile, open a modal with YouTube embed or HTML5 video element. Use videos.json to map languages → videos.
+Language behavior:
+•	If user selects Hindi filter, show only videos where lang includes hi.
+•	On the video page, show Related videos in the same language.
+Offline fallback:
+•	Provide links to downloadable MP4 (if allowed) or transcripts (text) stored in /assets.
+________________________________________
+11. Quiz module
+Design & behavior:
+•	Per-topic quizzes (loaded from /data/quizzes.json).
+•	Show one question at a time, multiple-choice, progress indicator, and Submit button.
+•	After submission: show correct/incorrect, explain answer (from JSON), and update score.
+•	At the end show result card with score, pass/fail threshold, and option to Share certificate (generate simple PDF with jsPDF or shareable URL).
+•	Persist progress or scores in localStorage.
+Scoring rules & example JSON:
+{ "id":"q1", "lang":"en", "title":"Aadhaar basics", "questions":[
+  {"q":"What is DBT?", "options":["Direct Benefit Transfer","..."], "answer":0, "explain":"DBT means..."}
+]}
+________________________________________
+12. Chatbot (multilingual) — two modes
+A. Rule-based (fully static) — no external API (works offline)
+•	chatbot.js holds phrase maps per language:
+const botData = {
+  en: { "hello":"Hello! How can I help?", "how to seed":"Follow this guide: ..." },
+  hi: { "नमस्ते":"नमस्ते! मैं मदद करूँगा", "सीडिंग कैसे करें":"..." }
+};
+•	Use fuzzy matching (normalize input, remove punctuation) and simple keyword matching.
+•	For unknown queries show fallback and CTA: “Watch tutorial” or “Ask admin”.
+B. AI-powered (recommended for real understanding)
+•	Use OpenAI (or other LLM) via a secure proxy (see Security note).
+•	Flow (client-side JS):
+1.	Detect user language (simple heuristic or Google translate detect).
+2.	If LLM supports the language, send user input directly to LLM.
+3.	If not, translate to English first, ask LLM, then translate back.
+•	Use fetch() to call your serverless endpoint that holds the API key. Example endpoint: /api/chat.
+•	Show typing indicator while waiting.
+Chat UI:
+•	Floating chat widget.
+•	Messages show language tag; allow user to switch language mid-chat; persist conversation in localStorage.
+________________________________________
+13. Administrator panel (admin.html)
+Login:
+•	Simple username/password form.
+•	For static deployment: use localStorage.adminPassword (insecure) OR integrate a serverless auth (Netlify Identity / Firebase Auth). Document both options clearly.
+Admin features:
+1.	Upload Student CSV
+o	CSV columns: studentId, name, phone, lang, aadhaar, bankAccount, ifsc, scholarshipType
+2.	Compose Message Template
+o	Provide template placeholders: {{name}}, {{amount}}, {{status}}.
+o	Multi-language templates loaded from i18n.smsTemplates.
+3.	Create Campaign
+o	Choose language filter, template, student filter (By scholarship, status).
+o	Upload/generate CSV for this campaign or choose saved list.
+4.	Schedule
+o	Options: Immediately or schedule (date & time). For static-only mode scheduling is simulated locally; for real, use a serverless scheduler.
+5.	Preview & Send
+o	Show campaign summary: recipients, template preview for first 3 recipients, scheduled time.
+o	Send now triggers API calls to SMS gateway (or mock sends in static mode).
+6.	Filters and monitoring
+o	Tabs: All / Pending / Failed / Success.
+o	Show campaign metrics: total students, messages sent, delivery rate, failed count.
+7.	Campaign history
+o	Storable in localStorage for static mode or in DB via serverless function.
+________________________________________
+14. Dashboard (dashboard.html)
+Widgets:
+•	KPI cards: Total Students, Messages Sent, Delivery Rate %, Failed.
+•	Charts: using chart.js (or small vanilla chart) for:
+o	Message delivery over time (line)
+o	DBT seeding progress (pie or stacked bar: success/pending/failed)
+•	Recent campaigns list with quick actions: Generate report, Schedule reminder, Review failed.
+•	Download reports (CSV export via client-side generation).
+Data sources:
+•	Pull from localStorage (static) or server API.
+________________________________________
+15. CSV format & admin CSV example
+CSV columns (required):
+studentId,name,phone,lang,aadhaar,bankAccount,ifsc,scholarshipType,email
+Example row:
+S1001,Anita Kumari,+919876543210,hi,123412341234,123456789012,SBIN0000001,PostMatric
+CSV upload behavior:
+•	Validate phone numbers and aadhaar format on client.
+•	Show preview table and allow manual edits before confirming upload.
+________________________________________
+16. SMS gateway / external APIs (optional but explained)
+Because static files can’t securely hold secrets, two options:
+Option A — Mock/static-only (no real SMS, no API keys)
+•	Admin Send simply simulates sends and stores results in localStorage. Use for demos / GitHub Pages.
+Option B — Real integration (recommended for production)
+•	Create a minimal serverless proxy (Netlify Functions, Vercel Serverless, or simple Express on Render) that:
+o	Stores the SMS provider API key (Twilio, MSG91, Fast2SMS).
+o	Accepts POST requests from client /api/send-sms with campaign ID; the function sends SMS and returns statuses.
+•	For AI chatbot: same approach — serverless /api/chat that calls OpenAI and returns response.
+•	Important security note: NEVER put API keys in client JS.
+Suggested providers:
+•	SMS: Twilio, MSG91 (India), Fast2SMS.
+•	Translate: Google Cloud Translate API or DeepL.
+•	AI: OpenAI Chat Completions (gpt-4o-mini / gpt-4.1) — or local HuggingFace inference if available.
+________________________________________
+17. UX details & small enhancements I added
+•	Progress autosave in learning flows.
+•	Printable checklist PDF for offline bank visits (generate via jsPDF).
+•	Language-aware video: when user clicks Hindi video, load &hl=hi&cc_lang_pref=hi YouTube params or choose Hindi MP4.
+•	Search indexing: create a small client-side index for community docs and knowledge base for fast search.
+•	Failure simulation: allow admin to mark certain phone numbers as “fail” for demo.
+•	Dark mode, keyboard accessible controls, and mobile-first responsive CSS.
+________________________________________
+18. UI/UX interactions (detailed event list for JS)
+•	onLangChange(lang) — load i18n JSON → update DOM → persist.
+•	onClickStartLearning(caseType) — initialize flow state in localStorage and show first step.
+•	onNextStep() — validate current step inputs, set progress, save state, show next.
+•	onQuizSubmit(questionId, selected) — store answer, show immediate feedback.
+•	onSearchDocs(query, filters) — filter data/docs.json.
+•	onVideoPlay(videoId) — open modal, set autoplay, record analytics (localStorage).
+•	admin.onUploadCSV(file) — parse CSV, validate, show preview.
+•	admin.onCreateCampaign() — prepare recipient list, show preview, schedule or send.
+•	sendSms(campaignId) — if mock: loop through recipients and randomly assign status; if real: call /api/send-sms.
+________________________________________
+19. Sample small code snippets (skeletons)
+i18n quick loader (app.js):
+async function loadLang(lang){
+  const res = await fetch(`/i18n/${lang}.json`);
+  const data = await res.json();
+  document.querySelectorAll('[data-i18n]').forEach(el=>{
+    const key = el.getAttribute('data-i18n'); // e.g. "home.heroTitle"
+    el.innerText = key.split('.').reduce((o,k)=>o[k], data);
+  });
+  document.documentElement.lang = lang;
+  localStorage.lang = lang;
+}
+Simple progress step (progressFlow.js):
+function goToStep(n){
+  const steps = document.querySelectorAll('.progress-step');
+  steps.forEach((s,i)=> s.classList.toggle('active', i<=n));
+  document.getElementById('step-content').dataset.step = n;
+  localStorage.currentStep = n;
+}
+CSV parse (admin.js) (use Papaparse in production, else simple parser):
+function parseCSV(text){
+  const rows = text.trim().split('\n').map(r => r.split(','));
+  const headers = rows.shift();
+  return rows.map(r => Object.fromEntries(headers.map((h,i)=>[h, r[i]?.trim()]));
+}
+________________________________________
+20. Deployment (static-only)
+•	Build steps:
+o	Ensure all dynamic data is in /data and /i18n.
+o	Minify CSS/JS if desired.
+•	Host on:
+o	GitHub Pages (push repo, use gh-pages branch).
+o	Netlify (drag & drop or Git-based).
+o	Vercel (static site config).
+•	For optional serverless functions (API proxy), deploy small functions on Netlify/Vercel or Render and point client to those endpoints.
+________________________________________
+21. Security & privacy caveats (must read)
+•	API keys must never be stored in client JS. Use serverless proxies for SMS/AI/translate.
+•	Aadhaar & personal data are sensitive: never store real Aadhaar numbers in plain localStorage or public repos. If you must collect PII for production, use proper backend storage with encryption and follow local data-protection rules.
+•	For demos, use masked dummy data.
+________________________________________
+22. Testing checklist (before handing to AI to generate)
+•	Language switch toggles all page text and html.lang.
+•	Progress flow persists and restarts correctly.
+•	Community search returns correct items by title/tag/language.
+•	Video panel loads correct language videos.
+•	Quiz scores calculated correctly and saved.
+•	Admin CSV upload validates formats.
+•	Mock SMS send shows realistic statuses and updates dashboard metrics.
+•	Accessibility tests: tab navigation, screen reader labels, contrast.
+•	Mobile responsiveness & touch usability.
+________________________________________
+23. Example name + final touches
+Given your features, pick a name from earlier list or one tailored: DBTConnect or LabhSetu. For branding, add a short tagline:
+DBTConnect — Aadhaar seeding, scholarship support & campus outreach (multilingual)
+________________________________________
+Build a static, responsive multilingual webapp in plain HTML/CSS/JS called DBTConnect with pages: Home, Know Difference, Procedure Guide (interactive progress flow for Fresh/Re-seeding/Bank change), Video Tutorials (language-specific), Community Outreach (documents + previews + downloads + search), Quiz module, Multilingual Chatbot (rule-based with optional AI mode), and an Administrator panel for CSV upload + SMS campaigns + Dashboard. All content must be driven by JSON files under /i18n and /data. Add client-side persistence (localStorage), responsive layout, accessibility attributes, and mock APIs for SMS/AI in static mode. Provide optional serverless function stubs for SMS and AI proxy. Include sample JSON files, sample CSV, and README with deploy steps. Secure note: do not embed API keys client-side; serverless proxy required for production.
+
