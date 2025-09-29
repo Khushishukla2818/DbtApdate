@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore Government Scholarship Schemes for SC students with eligibility, coverage, and application details.">
+    <title data-i18n="site.title">DBTGuide - Scholarship Schemes</title>
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+
+    <style>
+        /* ===== Scholarship Cards Styles ===== */
+        body { font-family: 'Inter', sans-serif; background-color: #f2f4f8; margin: 0; color: #333; }
+        .scholarship-info { background: #f9fbff; padding: 60px 20px; border-top: 5px solid #004aad; }
+        .scholarship-info .container { max-width: 1200px; margin: 0 auto; text-align: center; }
+        .scholarship-info h3 { font-size: 2.2rem; color: #004aad; font-weight: 700; margin-bottom: 12px; position: relative; }
+        .scholarship-info h3::after { content: ''; display: block; width: 70px; height: 4px; background-color: #ffb800; margin: 10px auto 0; border-radius: 2px; }
+        .section-subtitle { font-size: 1rem; color: #555; margin-bottom: 45px; }
+        .scholarship-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 30px; }
+        .scholarship-card { background: #fff; border-radius: 20px; padding: 25px 20px; text-align: left; box-shadow: 0 8px 18px rgba(0,0,0,0.08); transition: all 0.35s ease; display: flex; flex-direction: column; justify-content: space-between; }
+        .scholarship-card:hover { transform: translateY(-8px); box-shadow: 0 14px 30px rgba(0,0,0,0.15); }
+        .card-header { display: flex; align-items: center; gap: 15px; margin-bottom: 12px; }
+        .card-icon { font-size: 2.5rem; }
+        .card-header h4 { font-size: 1.35rem; font-weight: 700; color: #004aad; }
+        .card-content p { font-size: 0.95rem; color: #444; margin-bottom: 18px; line-height: 1.5; }
+        .card-details { background: #eaf0ff; padding: 15px 18px; border-radius: 12px; margin-bottom: 20px; }
+        .detail-item { font-size: 0.92rem; padding: 6px 0; border-bottom: 1px solid #d7e0f8; color: #333; }
+        .detail-item:last-child { border-bottom: none; }
+        .detail-label { font-weight: 600; color: #111; margin-right: 5px; }
+        .card-actions { display: flex; gap: 12px; margin-top: auto; }
+        .card-actions .btn { padding: 10px 20px; border-radius: 25px; font-size: 0.95rem; font-weight: 600; text-align: center; transition: all 0.3s ease; }
+        .btn-primary { background: #004aad; color: #fff; }
+        .btn-primary:hover { background: #003580; }
+        .btn-secondary { background: #e6f0ff; color: #004aad; }
+        .btn-secondary:hover { background: #d0e0ff; }
+        @media (max-width: 768px) { .scholarship-info h3 { font-size: 1.8rem; } .card-header h4 { font-size: 1.2rem; } }
+        @media (max-width: 480px) { .card-actions { flex-direction: column; } }
+    </style>
+</head>
+
+<body>
+
+    <!-- ===== Header ===== -->
+    <header class="header">
+        <div class="container">
+            <div class="header-content">
+                <div class="header-controls">
+                    <div class="language-switcher">
+                        <select id="languageSelector">
+                            <option value="en">English</option>
+                            <option value="hi">हिन्दी</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html" data-i18n="site.home">Home</a></li>
+                    <li><a href="schemes.html" data-i18n="site.scholarshipSchemes" class="active">Scholarship Schemes</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
+                    <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
+                    <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
+                    <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
+                    <li><a href="admin.html" data-i18n="site.admin">Administrator</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <!-- <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-announcement">
+                    <span class="announcement-badge">📢</span>
+                    <span data-i18n="home.announcement">New: Online Aadhaar Seeding Portal Now Live!</span>
+                </div>
+                <h2 class="hero-title" data-i18n="home.heroTitle">Explore Government Scholarship Schemes</h2>
+                <p class="hero-subtitle" data-i18n="home.heroSubtitle">Financial support programs designed to help SC students pursue quality education without financial burden.</p>
+            </div>
+        </div>
+    </section> -->
+
+    <!-- ===== Scholarship Information Cards ===== -->
+    <section class="scholarship-info">
+        <div class="container">
+            <h3 data-i18n="home.scholarshipTypes">Government Scholarship Schemes</h3>
+            <p class="section-subtitle">Explore financial support programs designed to help SC students pursue quality education without financial burden.</p>
+            <div class="scholarship-grid">
+
+                <!-- Post-Matric Scholarship -->
+                <div class="scholarship-card post-matric">
+                    <div class="card-header">
+                        <div class="card-icon">🎓</div>
+                        <h4 data-i18n="home.postMatricTitle">Post-Matric Scholarship</h4>
+                    </div>
+                    <div class="card-content">
+                        <p data-i18n="home.postMatricDesc">For students of Class XI onwards, covering ITI, Diploma, Graduation, and Post-Graduation courses.</p>
+                        <div class="card-details">
+                            <div class="detail-item"><span class="detail-label">Coverage:</span> Tuition + Maintenance Allowance</div>
+                            <div class="detail-item"><span class="detail-label">Amount:</span> ₹380 – ₹2,000 / month</div>
+                            <div class="detail-item"><span class="detail-label">Eligibility:</span> Family income ≤ ₹2.5 Lakh / year</div>
+                            <div class="detail-item"><span class="detail-label">Application:</span> Open throughout the year</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://scholarships.gov.in/fresh/newstudentregistration" target="_blank" class="btn btn-primary">Apply Now</a>
+                        <a href="know-difference.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Pre-Matric Scholarship -->
+                <div class="scholarship-card pre-matric">
+                    <div class="card-header">
+                        <div class="card-icon">📚</div>
+                        <h4 data-i18n="home.preMatricTitle">Pre-Matric Scholarship</h4>
+                    </div>
+                    <div class="card-content">
+                        <p data-i18n="home.preMatricDesc">Designed for SC students studying in Classes IX & X to reduce dropouts and encourage continuation of studies.</p>
+                        <div class="card-details">
+                            <div class="detail-item"><span class="detail-label">Coverage:</span> Tuition + Books & Stationery</div>
+                            <div class="detail-item"><span class="detail-label">Amount:</span> ₹225 – ₹700 / month</div>
+                            <div class="detail-item"><span class="detail-label">Eligibility:</span> Family income ≤ ₹2.5 Lakh / year</div>
+                            <div class="detail-item"><span class="detail-label">Application:</span> Open throughout the year</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://scholarships.gov.in/fresh/newstudentregistration" target="_blank" class="btn btn-primary">Apply Now</a>
+                        <a href="know-difference.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+
+                <!-- Top Class Education -->
+                <div class="scholarship-card top-class">
+                    <div class="card-header">
+                        <div class="card-icon">🏆</div>
+                        <h4 data-i18n="home.topClassTitle">Top Class Education Scheme</h4>
+                    </div>
+                    <div class="card-content">
+                        <p data-i18n="home.topClassDesc">Provides full financial support for SC students in India’s top institutions like IITs, IIMs, NITs, and other notified universities.</p>
+                        <div class="card-details">
+                            <div class="detail-item"><span class="detail-label">Coverage:</span> Full tuition + Living Expenses</div>
+                            <div class="detail-item"><span class="detail-label">Amount:</span> Up to ₹3,000 / month + full fee waiver</div>
+                            <div class="detail-item"><span class="detail-label">Eligibility:</span> Family income ≤ ₹8 Lakh / year</div>
+                            <div class="detail-item"><span class="detail-label">Seats:</span> Limited (Merit-based selection)</div>
+                        </div>
+                    </div>
+                    <div class="card-actions">
+                        <a href="https://scholarships.gov.in/topclass" target="_blank" class="btn btn-primary">Apply Now</a>
+                        <a href="know-difference.html" class="btn btn-secondary">Learn More</a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h5 data-i18n="footer.contact">Contact Information</h5>
+                    <p data-i18n="footer.helpdesk">National Helpdesk: 1800-11-1111</p>
+                    <p data-i18n="footer.email">Email: scholarships@gov.in</p>
+                </div>
+                <div class="footer-section">
+                    <h5 data-i18n="footer.links">Important Links</h5>
+                    <a href="#" data-i18n="footer.ministry">Ministry of Social Justice</a>
+                    <a href="#" data-i18n="footer.nsp">National Scholarship Portal</a>
+                </div>
+                <div class="footer-section">
+                    <h5 data-i18n="footer.disclaimer">Disclaimer</h5>
+                    <p data-i18n="footer.disclaimerText">This is an official Government of India website</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="js/i18n.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

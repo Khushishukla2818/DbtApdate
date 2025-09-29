@@ -490,3 +490,70 @@ Keep this report for your records.
 document.addEventListener('DOMContentLoaded', () => {
     new KnowledgeManager();
 });
+
+
+// Home page FAQ loader
+async function loadHomeFAQs() {
+    const faqAccordion = document.getElementById('homeFaqAccordion');
+    const faqSearch = document.getElementById('homeFaqSearch');
+    if (!faqAccordion) return;
+
+    try {
+        const res = await fetch('data/faqs.json'); // adjust path if needed
+        const faqs = await res.json();
+
+        const lang = window.i18nManager ? window.i18nManager.getCurrentLanguage() : 'en';
+
+        // Render FAQs
+        faqs.forEach(faq => {
+            const item = document.createElement('div');
+            item.classList.add('faq-item');
+            item.innerHTML = `
+                <div class="faq-question">
+                    <span>${faq.question[lang] || faq.question.en}</span>
+                    <span class="faq-icon">+</span>
+                </div>
+                <div class="faq-answer">
+                    <p>${faq.answer[lang] || faq.answer.en}</p>
+                </div>
+            `;
+            faqAccordion.appendChild(item);
+        });
+
+        // Setup FAQ toggle
+        faqAccordion.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const answer = question.nextElementSibling;
+                const icon = question.querySelector('.faq-icon');
+
+                if (answer.classList.contains('active')) {
+                    answer.classList.remove('active');
+                    icon.textContent = '+';
+                } else {
+                    faqAccordion.querySelectorAll('.faq-answer.active').forEach(a => a.classList.remove('active'));
+                    faqAccordion.querySelectorAll('.faq-icon').forEach(i => i.textContent = '+');
+                    answer.classList.add('active');
+                    icon.textContent = '-';
+                }
+            });
+        });
+
+        // FAQ search
+        if (faqSearch) {
+            faqSearch.addEventListener('input', e => {
+                const term = e.target.value.toLowerCase();
+                faqAccordion.querySelectorAll('.faq-item').forEach(item => {
+                    const q = item.querySelector('.faq-question span').textContent.toLowerCase();
+                    const a = item.querySelector('.faq-answer p').textContent.toLowerCase();
+                    item.style.display = q.includes(term) || a.includes(term) ? 'block' : 'none';
+                });
+            });
+        }
+
+    } catch (err) {
+        console.error('Failed to load FAQs:', err);
+    }
+}
+
+// Run on DOMContentLoaded
+document.addEventListener('DOMContentLoaded', loadHomeFAQs);

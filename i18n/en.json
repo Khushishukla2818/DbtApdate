@@ -1,7 +1,6 @@
 {
   "site": {
-    "title": "DBTGuide",
-    "subtitle": "Scholarship Scheme for SC Students",
+    "title": "DBTMitra",
     "home": "Home",
     "knowDifference": "Know the Difference",
     "procedureGuide": "Procedure Guide",
@@ -12,8 +11,8 @@
   },
   "home": {
     "announcement": "New: Online Aadhaar Seeding Portal Now Live!",
-    "heroTitle": "Scholarship Scheme for SC Students",
-    "heroSubtitle": "Direct Benefit Transfer (DBT) - Empowering Education Through Digital India",
+    "heroTitle": "Understanding Direct Benefit Transfer",
+    "heroSubtitle": "Easily link your Aadhaar with your bank account for direct scholarship transfers",
     "studentsHelped": "Students Helped",
     "amountDisbursed": "Amount Disbursed",
     "successRate": "Success Rate",
