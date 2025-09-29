@@ -1,16 +1,19 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Interactive step-by-step guide for Aadhaar seeding process">
     <title data-i18n="procedure.title">Procedure Guide - DBTGuide</title>
-    
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
     <link rel="stylesheet" href="css/procedure.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -35,7 +38,8 @@
                 <ul class="nav-list">
                     <li><a href="index.html" data-i18n="site.home">Home</a></li>
                     <li><a href="know-difference.html" data-i18n="site.knowDifference">Know the Difference</a></li>
-                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide" class="active">Procedure Guide</a></li>
+                    <li><a href="procedure-guide.html" data-i18n="site.procedureGuide" class="active">Procedure
+                            Guide</a></li>
                     <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
                     <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
                     <li><a href="quiz.html" data-i18n="site.quiz">Quiz</a></li>
@@ -48,21 +52,23 @@
     <main class="main-content">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <a href="index.html" data-i18n="site.home">Home</a> >
                 <span data-i18n="site.procedureGuide">Procedure Guide</span>
             </div>
-            
+
             <h2 class="page-title" data-i18n="procedure.title">Interactive Procedure Guide</h2>
-            
+
             <div class="procedure-selector">
                 <h3 data-i18n="procedure.selectCase">Select Your Case:</h3>
                 <div class="case-buttons">
-                    <button class="case-btn active" data-case="fresh" data-i18n="procedure.freshSeeding">Fresh Seeding</button>
+                    <button class="case-btn active" data-case="fresh" data-i18n="procedure.freshSeeding">Fresh
+                        Seeding</button>
                     <button class="case-btn" data-case="reseeding" data-i18n="procedure.reSeeding">Re-Seeding</button>
-                    <button class="case-btn" data-case="bankchange" data-i18n="procedure.bankChange">Bank Change</button>
+                    <button class="case-btn" data-case="bankchange" data-i18n="procedure.bankChange">Bank
+                        Change</button>
                 </div>
             </div>
-            
+
             <div class="progress-container">
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill"></div>
@@ -90,12 +96,12 @@
                     </div>
                 </div>
             </div>
-            
+
             <div class="procedure-content">
                 <div class="step-content" id="stepContent">
                     <!-- Dynamic content loaded here -->
                 </div>
-                
+
                 <div class="side-checklist">
                     <h4 data-i18n="procedure.actionChecklist">Action Checklist</h4>
                     <ul class="checklist" id="actionChecklist">
@@ -103,11 +109,345 @@
                     </ul>
                 </div>
             </div>
-            
+
+            <style>
+                /* General container */
+                .main-content .container {
+                    max-width: 1200px;
+                    margin: 0 auto;
+                    padding: 20px 15px;
+                    font-family: 'Inter', sans-serif;
+                    color: #374151;
+                }
+
+                /* Breadcrumb */
+                .breadcrumb {
+                    font-size: 0.9rem;
+                    margin-bottom: 20px;
+                }
+
+                .breadcrumb a {
+                    color: #1e40af;
+                    text-decoration: none;
+                }
+
+                .breadcrumb a:hover {
+                    text-decoration: underline;
+                }
+
+                .breadcrumb span {
+                    color: #6b7280;
+                }
+
+                /* Page title */
+                .page-title {
+                    font-size: 2rem;
+                    font-weight: 700;
+                    margin-bottom: 25px;
+                    color: #1e3a8a;
+                }
+
+                /* Case buttons */
+                .procedure-selector {
+                    margin-bottom: 30px;
+                }
+
+                .case-buttons {
+                    display: flex;
+                    gap: 15px;
+                    flex-wrap: wrap;
+                }
+
+                .case-btn {
+                    padding: 10px 20px;
+                    border-radius: 8px;
+                    border: 2px solid #1e40af;
+                    background-color: #ffffff;
+                    color: #1e40af;
+                    font-weight: 500;
+                    cursor: pointer;
+                    transition: all 0.3s ease;
+                }
+
+                .case-btn:hover {
+                    background-color: #1e40af;
+                    color: #ffffff;
+                }
+
+                .case-btn.active {
+                    background-color: #1e40af;
+                    color: #ffffff;
+                }
+
+                /* Progress container */
+                .progress-container {
+                    margin-bottom: 40px;
+                }
+
+                /* Progress bar */
+                .progress-bar {
+                    width: 100%;
+                    height: 8px;
+                    background-color: #e5e7eb;
+                    border-radius: 4px;
+                    overflow: hidden;
+                    margin-bottom: 15px;
+                }
+
+                .progress-fill {
+                    height: 100%;
+                    width: 0%;
+                    background-color: #1e40af;
+                    border-radius: 4px;
+                    transition: width 0.4s ease;
+                }
+
+                /* Progress steps */
+                .progress-steps {
+                    display: flex;
+                    justify-content: space-between;
+                    position: relative;
+                }
+
+                .progress-steps .step {
+                    text-align: center;
+                    flex: 1;
+                    position: relative;
+                }
+
+                .progress-steps .step:not(:last-child)::after {
+                    content: '';
+                    position: absolute;
+                    top: 50%;
+                    right: -50%;
+                    width: 100%;
+                    height: 3px;
+                    background-color: #e5e7eb;
+                    transform: translateY(-50%);
+                    z-index: 0;
+                }
+
+                .progress-steps .step.active,
+                .progress-steps .step.completed {
+                    color: #1e40af;
+                }
+
+                .progress-steps .step-number {
+                    width: 28px;
+                    height: 28px;
+                    line-height: 28px;
+                    border-radius: 50%;
+                    background-color: #e5e7eb;
+                    margin: 0 auto 5px auto;
+                    font-weight: 600;
+                    color: #374151;
+                    z-index: 1;
+                    position: relative;
+                    transition: all 0.3s ease;
+                }
+
+                .progress-steps .step.active .step-number,
+                .progress-steps .step.completed .step-number {
+                    background-color: #1e40af;
+                    color: #ffffff;
+                }
+
+                .progress-steps .step-label {
+                    font-size: 0.85rem;
+                }
+
+                /* Procedure content (main + checklist) */
+                .procedure-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                }
+
+                /* Step content */
+                .step-content {
+                    flex: 2 1 600px;
+                    background-color: #ffffff;
+                    padding: 25px 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                }
+
+                /* Each step card inside dynamic content */
+                .step-content .step-card {
+                    background-color: #f3f4f6;
+                    border-left: 4px solid #1e40af;
+                    padding: 15px 20px;
+                    margin-bottom: 15px;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+                }
+
+                .step-content .step-card:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                }
+
+                .step-content h5,
+                .step-content p {
+                    margin: 0 0 8px 0;
+                }
+
+                /* Checklist sidebar */
+                .side-checklist {
+                    flex: 1 1 250px;
+                    background-color: #ffffff;
+                    padding: 20px 25px;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                    height: fit-content;
+                }
+
+                .side-checklist h4 {
+                    margin-bottom: 15px;
+                    font-size: 1.2rem;
+                    color: #1e40af;
+                    border-bottom: 2px solid #e5e7eb;
+                    padding-bottom: 5px;
+                }
+
+                .side-checklist .checklist {
+                    list-style: none;
+                    padding-left: 0;
+                }
+
+                .side-checklist .checklist li {
+                    position: relative;
+                    padding-left: 28px;
+                    margin-bottom: 12px;
+                    font-size: 0.95rem;
+                    color: #374151;
+                }
+
+                .side-checklist .checklist li::before {
+                    content: '✔';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: #10b981;
+                    /* green checkmark */
+                    font-weight: bold;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 992px) {
+                    .procedure-content {
+                        flex-direction: column;
+                    }
+
+                    .step-content,
+                    .side-checklist {
+                        flex: 1 1 100%;
+                    }
+
+                    .progress-steps .step:not(:last-child)::after {
+                        width: 100%;
+                        right: 0;
+                    }
+                }
+
+                /* Container for procedure content */
+                .procedure-content {
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 30px;
+                    margin-top: 30px;
+                }
+
+                /* Main step content */
+                .step-content {
+                    flex: 2 1 600px;
+                    background-color: #ffffff;
+                    padding: 25px 30px;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                    transition: all 0.3s ease;
+                }
+
+                /* Each step card inside dynamic content */
+                .step-content .step-card {
+                    background-color: #f3f4f6;
+                    border-left: 4px solid #1e40af;
+                    padding: 15px 20px;
+                    margin-bottom: 15px;
+                    border-radius: 8px;
+                    transition: transform 0.3s ease;
+                }
+
+                .step-content .step-card:hover {
+                    transform: translateY(-3px);
+                    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+                }
+
+                .step-content h5,
+                .step-content p {
+                    margin: 0 0 8px 0;
+                }
+
+                /* Checklist sidebar */
+                .side-checklist {
+                    flex: 1 1 250px;
+                    background-color: #ffffff;
+                    padding: 20px 25px;
+                    border-radius: 12px;
+                    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+                    height: fit-content;
+                }
+
+                .side-checklist h4 {
+                    margin-bottom: 15px;
+                    font-size: 1.2rem;
+                    color: #1e40af;
+                    border-bottom: 2px solid #e5e7eb;
+                    padding-bottom: 5px;
+                }
+
+                .side-checklist .checklist {
+                    list-style: none;
+                    padding-left: 0;
+                }
+
+                .side-checklist .checklist li {
+                    position: relative;
+                    padding-left: 28px;
+                    margin-bottom: 12px;
+                    font-size: 0.95rem;
+                    color: #374151;
+                }
+
+                .side-checklist .checklist li::before {
+                    content: '✔';
+                    position: absolute;
+                    left: 0;
+                    top: 0;
+                    color: #10b981;
+                    /* green checkmark */
+                    font-weight: bold;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 992px) {
+                    .procedure-content {
+                        flex-direction: column;
+                    }
+
+                    .step-content,
+                    .side-checklist {
+                        flex: 1 1 100%;
+                    }
+                }
+            </style>
+
             <div class="procedure-controls">
                 <button class="btn btn-secondary" id="prevBtn" disabled data-i18n="procedure.back">Back</button>
                 <button class="btn btn-primary" id="nextBtn" data-i18n="procedure.next">Next</button>
-                <button class="btn btn-success" id="startBtn" data-i18n="procedure.startLearning">Start Learning</button>
+                <button class="btn btn-success" id="startBtn" data-i18n="procedure.startLearning">Start
+                    Learning</button>
             </div>
         </div>
     </main>
@@ -135,8 +475,11 @@
         </div>
     </div>
 
+    <!-- Chat Widget -->
     <div class="chat-widget" id="chatWidget">
-        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-toggle" id="chatToggle">
+            <span>🤖</span> <!-- Robot icon instead of 💬 -->
+        </div>
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
                 <span data-i18n="chatbot.title">Help Assistant</span>
@@ -144,15 +487,40 @@
             </div>
             <div class="chat-messages" id="chatMessages"></div>
             <div class="chat-input">
-                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <input type="text" id="chatInput" placeholder="Ask about DBT, Aadhaar or Scholarships..."
+                    data-i18n-placeholder="chatbot.placeholder">
                 <button id="chatSend">Send</button>
             </div>
         </div>
     </div>
+    <style>
+        /* Chat Toggle Button with Robot Icon */
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #004aad;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 2rem;
+            /* bigger for robot icon */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .chat-toggle:hover {
+            background: #003580;
+            transform: scale(1.1);
+        }
+    </style>
 
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/procedure.js"></script>
     <script src="js/chatbot.js"></script>
 </body>
+
 </html>

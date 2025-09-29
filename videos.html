@@ -113,21 +113,46 @@
             </div>
         </div>
     </div>
-
+  <!-- Chat Widget -->
     <div class="chat-widget" id="chatWidget">
-        <div class="chat-toggle" id="chatToggle">💬</div>
-        <div class="chat-window" id="chatWindow">
-            <div class="chat-header">
-                <span data-i18n="chatbot.title">Help Assistant</span>
-                <button class="chat-close" id="chatClose">×</button>
-            </div>
-            <div class="chat-messages" id="chatMessages"></div>
-            <div class="chat-input">
-                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
-                <button id="chatSend">Send</button>
-            </div>
+    <div class="chat-toggle" id="chatToggle">
+        <span>🤖</span> <!-- Robot icon instead of 💬 -->
+    </div>
+    <div class="chat-window" id="chatWindow">
+        <div class="chat-header">
+            <span data-i18n="chatbot.title">Help Assistant</span>
+            <button class="chat-close" id="chatClose">×</button>
+        </div>
+        <div class="chat-messages" id="chatMessages"></div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Ask about DBT, Aadhaar or Scholarships..." data-i18n-placeholder="chatbot.placeholder">
+            <button id="chatSend">Send</button>
         </div>
     </div>
+</div>
+<style>
+    /* Chat Toggle Button with Robot Icon */
+.chat-toggle {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background: #004aad;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 2rem; /* bigger for robot icon */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+}
+
+.chat-toggle:hover {
+    background: #003580;
+    transform: scale(1.1);
+}
+
+</style>
 
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>

@@ -1,15 +1,18 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Understanding the difference between Aadhaar linking, DBT and Seeding">
     <title data-i18n="knowledge.title">Know the Difference - DBTGuide</title>
-    
+
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/components.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
+    <link rel="icon"
+        href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🇮🇳</text></svg>">
 </head>
+
 <body>
     <header class="header">
         <div class="container">
@@ -33,7 +36,8 @@
             <nav class="main-nav">
                 <ul class="nav-list">
                     <li><a href="index.html" data-i18n="site.home">Home</a></li>
-                    <li><a href="know-difference.html" data-i18n="site.knowDifference" class="active">Know the Difference</a></li>
+                    <li><a href="know-difference.html" data-i18n="site.knowDifference" class="active">Know the
+                            Difference</a></li>
                     <li><a href="procedure-guide.html" data-i18n="site.procedureGuide">Procedure Guide</a></li>
                     <li><a href="community.html" data-i18n="site.community">Community Outreach</a></li>
                     <li><a href="videos.html" data-i18n="site.videos">Video Tutorials</a></li>
@@ -47,43 +51,55 @@
     <main class="main-content">
         <div class="container">
             <div class="breadcrumb">
-                <a href="index.html" data-i18n="site.home">Home</a> > 
+                <a href="index.html" data-i18n="site.home">Home</a> >
                 <span data-i18n="site.knowDifference">Know the Difference</span>
             </div>
-            
+
             <h2 class="page-title" data-i18n="knowledge.title">Know the Difference</h2>
-            <p class="page-intro" data-i18n="knowledge.intro">Understanding key concepts for successful scholarship application</p>
-            
+            <p class="page-intro" data-i18n="knowledge.intro">Understanding key concepts for successful scholarship
+                application</p>
+
             <div class="knowledge-tabs">
                 <div class="tab-nav">
-                    <button class="tab-button active" data-tab="status-checker" data-i18n="knowledge.statusChecker">Check Status</button>
-                    <button class="tab-button" data-tab="aadhaar-linking" data-i18n="knowledge.aadhaarLinking">Aadhaar Linking</button>
-                    <button class="tab-button" data-tab="dbt-enabled" data-i18n="knowledge.dbtEnabled">DBT Enabled</button>
-                    <button class="tab-button" data-tab="aadhaar-seeding" data-i18n="knowledge.aadhaarSeeding">Aadhaar Seeding</button>
-                    <button class="tab-button" data-tab="myths-faqs" data-i18n="knowledge.mythsFaqs">Myths & FAQs</button>
+                    <button class="tab-button active" data-tab="status-checker"
+                        data-i18n="knowledge.statusChecker">Check Status</button>
+                    <button class="tab-button" data-tab="aadhaar-linking" data-i18n="knowledge.aadhaarLinking">Aadhaar
+                        Linking</button>
+                    <button class="tab-button" data-tab="dbt-enabled" data-i18n="knowledge.dbtEnabled">DBT
+                        Enabled</button>
+                    <button class="tab-button" data-tab="aadhaar-seeding" data-i18n="knowledge.aadhaarSeeding">Aadhaar
+                        Seeding</button>
+                    <button class="tab-button" data-tab="myths-faqs" data-i18n="knowledge.mythsFaqs">Myths &
+                        FAQs</button>
                 </div>
-                
+
                 <div class="tab-content">
                     <div class="tab-panel active" id="status-checker">
                         <h3 data-i18n="knowledge.statusCheckerTitle">Check Your Aadhaar Seeding Status</h3>
                         <div class="knowledge-card">
-                            <p data-i18n="knowledge.statusCheckerDesc">Enter your Aadhaar number to check your DBT seeding status and scholarship eligibility.</p>
-                            
+                            <p data-i18n="knowledge.statusCheckerDesc">Enter your Aadhaar number to check your DBT
+                                seeding status and scholarship eligibility.</p>
+
                             <div class="status-checker-form">
                                 <div class="form-group">
-                                    <label for="aadhaarInput" data-i18n="knowledge.aadhaarLabel">Aadhaar Number (12 digits)</label>
-                                    <input type="text" id="aadhaarInput" maxlength="14" placeholder="XXXX XXXX XXXX" class="form-control">
+                                    <label for="aadhaarInput" data-i18n="knowledge.aadhaarLabel">Aadhaar Number (12
+                                        digits)</label>
+                                    <input type="text" id="aadhaarInput" maxlength="14" placeholder="XXXX XXXX XXXX"
+                                        class="form-control">
                                     <span class="error-message" id="aadhaarError"></span>
                                 </div>
-                                
+
                                 <div class="form-group">
-                                    <label for="bankAccount" data-i18n="knowledge.bankAccountLabel">Bank Account Number (Optional)</label>
-                                    <input type="text" id="bankAccount" placeholder="Enter account number" class="form-control">
+                                    <label for="bankAccount" data-i18n="knowledge.bankAccountLabel">Bank Account Number
+                                        (Optional)</label>
+                                    <input type="text" id="bankAccount" placeholder="Enter account number"
+                                        class="form-control">
                                 </div>
-                                
-                                <button type="button" id="checkStatusBtn" class="btn btn-primary" data-i18n="knowledge.checkStatus">Check Status</button>
+
+                                <button type="button" id="checkStatusBtn" class="btn btn-primary"
+                                    data-i18n="knowledge.checkStatus">Check Status</button>
                             </div>
-                            
+
                             <div class="status-result" id="statusResult" style="display: none;">
                                 <div class="status-card">
                                     <h4 data-i18n="knowledge.statusResultTitle">Status Result</h4>
@@ -91,80 +107,97 @@
                                         <!-- Dynamic status content -->
                                     </div>
                                     <div class="status-actions">
-                                        <button class="btn btn-secondary" id="downloadReport" data-i18n="knowledge.downloadReport">Download Report</button>
-                                        <button class="btn btn-success" id="proceedToGuide" data-i18n="knowledge.proceedToGuide">Proceed to Guide</button>
+                                        <button class="btn btn-secondary" id="downloadReport"
+                                            data-i18n="knowledge.downloadReport">Download Report</button>
+                                        <button class="btn btn-success" id="proceedToGuide"
+                                            data-i18n="knowledge.proceedToGuide">Proceed to Guide</button>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-panel" id="aadhaar-linking">
                         <h3 data-i18n="knowledge.aadhaarLinkingTitle">What is Aadhaar Linking?</h3>
                         <div class="knowledge-card">
                             <div class="concept-overview">
                                 <div class="concept-icon">🔗</div>
-                                <p data-i18n="knowledge.aadhaarLinkingDesc">Aadhaar linking is the foundational process of connecting your unique 12-digit Aadhaar number with various government and financial services to enable seamless, paperless, and cashless transactions.</p>
+                                <p data-i18n="knowledge.aadhaarLinkingDesc">Aadhaar linking is the foundational process
+                                    of connecting your unique 12-digit Aadhaar number with various government and
+                                    financial services to enable seamless, paperless, and cashless transactions.</p>
                             </div>
-                            
+
                             <div class="concept-details">
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.whatIsAadhaar">What is Aadhaar?</h5>
-                                    <p data-i18n="knowledge.aadhaarDefinition">Aadhaar is a 12-digit unique identity number issued by UIDAI (Unique Identification Authority of India) based on biometric and demographic data of residents.</p>
+                                    <p data-i18n="knowledge.aadhaarDefinition">Aadhaar is a 12-digit unique identity
+                                        number issued by UIDAI (Unique Identification Authority of India) based on
+                                        biometric and demographic data of residents.</p>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.examples">Common Aadhaar Linking Examples:</h5>
                                     <div class="examples-grid">
                                         <div class="example-item">
                                             <div class="example-icon">🏦</div>
                                             <h6 data-i18n="knowledge.bankLinking">Bank Account Linking</h6>
-                                            <p data-i18n="knowledge.bankLinkingDesc">Essential for receiving government subsidies, scholarships, and benefits directly in your account</p>
+                                            <p data-i18n="knowledge.bankLinkingDesc">Essential for receiving government
+                                                subsidies, scholarships, and benefits directly in your account</p>
                                         </div>
                                         <div class="example-item">
                                             <div class="example-icon">📱</div>
                                             <h6 data-i18n="knowledge.mobileLinking">Mobile Number Linking</h6>
-                                            <p data-i18n="knowledge.mobileLinkingDesc">Required for OTP-based authentication and mobile-based services</p>
+                                            <p data-i18n="knowledge.mobileLinkingDesc">Required for OTP-based
+                                                authentication and mobile-based services</p>
                                         </div>
                                         <div class="example-item">
                                             <div class="example-icon">📋</div>
                                             <h6 data-i18n="knowledge.panLinking">PAN Card Linking</h6>
-                                            <p data-i18n="knowledge.panLinkingDesc">Mandatory for income tax filing and financial transactions above certain limits</p>
+                                            <p data-i18n="knowledge.panLinkingDesc">Mandatory for income tax filing and
+                                                financial transactions above certain limits</p>
                                         </div>
                                         <div class="example-item">
                                             <div class="example-icon">🎓</div>
                                             <h6 data-i18n="knowledge.scholarshipLinking">Scholarship Portal Linking</h6>
-                                            <p data-i18n="knowledge.scholarshipLinkingDesc">Required for scholarship registration and verification on National Scholarship Portal</p>
+                                            <p data-i18n="knowledge.scholarshipLinkingDesc">Required for scholarship
+                                                registration and verification on National Scholarship Portal</p>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.benefits">Key Benefits:</h5>
                                     <ul class="benefits-list">
-                                        <li data-i18n="knowledge.benefit1">Single identity proof for multiple services</li>
+                                        <li data-i18n="knowledge.benefit1">Single identity proof for multiple services
+                                        </li>
                                         <li data-i18n="knowledge.benefit2">Reduced paperwork and faster processing</li>
                                         <li data-i18n="knowledge.benefit3">Enhanced security and fraud prevention</li>
-                                        <li data-i18n="knowledge.benefit4">Direct benefit transfer without intermediaries</li>
+                                        <li data-i18n="knowledge.benefit4">Direct benefit transfer without
+                                            intermediaries</li>
                                     </ul>
                                 </div>
                             </div>
-                            
+
                             <div class="action-buttons">
-                                <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.startLinking">Start Linking Process</a>
-                                <a href="https://uidai.gov.in" target="_blank" class="btn btn-secondary" data-i18n="knowledge.officialSite">Visit UIDAI Official Site</a>
+                                <a href="procedure-guide.html" class="btn btn-primary"
+                                    data-i18n="knowledge.startLinking">Start Linking Process</a>
+                                <a href="https://uidai.gov.in" target="_blank" class="btn btn-secondary"
+                                    data-i18n="knowledge.officialSite">Visit UIDAI Official Site</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-panel" id="dbt-enabled">
                         <h3 data-i18n="knowledge.dbtEnabledTitle">What does DBT Enabled Mean?</h3>
                         <div class="knowledge-card">
                             <div class="concept-overview">
                                 <div class="concept-icon">💰</div>
-                                <p data-i18n="knowledge.dbtEnabledDesc">DBT (Direct Benefit Transfer) Enabled status means your bank account is registered and verified to receive government subsidies, scholarships, and benefits directly from government treasuries without any intermediaries.</p>
+                                <p data-i18n="knowledge.dbtEnabledDesc">DBT (Direct Benefit Transfer) Enabled status
+                                    means your bank account is registered and verified to receive government subsidies,
+                                    scholarships, and benefits directly from government treasuries without any
+                                    intermediaries.</p>
                             </div>
-                            
+
                             <div class="concept-details">
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.howDBTWorks">How DBT System Works:</h5>
@@ -173,69 +206,79 @@
                                             <div class="step-number">1</div>
                                             <div class="step-content">
                                                 <h6 data-i18n="knowledge.step1Title">Eligibility Verification</h6>
-                                                <p data-i18n="knowledge.step1Desc">Government verifies your eligibility for schemes using Aadhaar authentication</p>
+                                                <p data-i18n="knowledge.step1Desc">Government verifies your eligibility
+                                                    for schemes using Aadhaar authentication</p>
                                             </div>
                                         </div>
                                         <div class="flow-step">
                                             <div class="step-number">2</div>
                                             <div class="step-content">
                                                 <h6 data-i18n="knowledge.step2Title">Bank Account Validation</h6>
-                                                <p data-i18n="knowledge.step2Desc">Your Aadhaar-linked bank account details are validated for transfer</p>
+                                                <p data-i18n="knowledge.step2Desc">Your Aadhaar-linked bank account
+                                                    details are validated for transfer</p>
                                             </div>
                                         </div>
                                         <div class="flow-step">
                                             <div class="step-number">3</div>
                                             <div class="step-content">
                                                 <h6 data-i18n="knowledge.step3Title">Direct Transfer</h6>
-                                                <p data-i18n="knowledge.step3Desc">Amount is transferred directly from government treasury to your account</p>
+                                                <p data-i18n="knowledge.step3Desc">Amount is transferred directly from
+                                                    government treasury to your account</p>
                                             </div>
                                         </div>
                                         <div class="flow-step">
                                             <div class="step-number">4</div>
                                             <div class="step-content">
                                                 <h6 data-i18n="knowledge.step4Title">SMS Confirmation</h6>
-                                                <p data-i18n="knowledge.step4Desc">You receive SMS confirmation about the credit in your account</p>
+                                                <p data-i18n="knowledge.step4Desc">You receive SMS confirmation about
+                                                    the credit in your account</p>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.dbtBenefits">Key Advantages of DBT:</h5>
                                     <div class="benefits-grid">
                                         <div class="benefit-item">
                                             <div class="benefit-icon">⚡</div>
                                             <h6 data-i18n="knowledge.speedTitle">Lightning Fast</h6>
-                                            <p data-i18n="knowledge.speedDesc">Transfers happen within minutes, not days or weeks</p>
+                                            <p data-i18n="knowledge.speedDesc">Transfers happen within minutes, not days
+                                                or weeks</p>
                                         </div>
                                         <div class="benefit-item">
                                             <div class="benefit-icon">🔒</div>
                                             <h6 data-i18n="knowledge.securityTitle">100% Secure</h6>
-                                            <p data-i18n="knowledge.securityDesc">No cash handling, reduces corruption and leakage</p>
+                                            <p data-i18n="knowledge.securityDesc">No cash handling, reduces corruption
+                                                and leakage</p>
                                         </div>
                                         <div class="benefit-item">
                                             <div class="benefit-icon">📊</div>
                                             <h6 data-i18n="knowledge.transparentTitle">Fully Transparent</h6>
-                                            <p data-i18n="knowledge.transparentDesc">Complete audit trail and real-time tracking</p>
+                                            <p data-i18n="knowledge.transparentDesc">Complete audit trail and real-time
+                                                tracking</p>
                                         </div>
                                         <div class="benefit-item">
                                             <div class="benefit-icon">🎯</div>
                                             <h6 data-i18n="knowledge.targetedTitle">Targeted Delivery</h6>
-                                            <p data-i18n="knowledge.targetedDesc">Benefits reach only eligible beneficiaries</p>
+                                            <p data-i18n="knowledge.targetedDesc">Benefits reach only eligible
+                                                beneficiaries</p>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.dbtStats">DBT Success Statistics:</h5>
                                     <div class="stats-container">
                                         <div class="stat-box">
                                             <div class="stat-value">₹7.35 Lakh Cr</div>
-                                            <div class="stat-label" data-i18n="knowledge.totalTransferred">Total Amount Transferred</div>
+                                            <div class="stat-label" data-i18n="knowledge.totalTransferred">Total Amount
+                                                Transferred</div>
                                         </div>
                                         <div class="stat-box">
                                             <div class="stat-value">40+ Cr</div>
-                                            <div class="stat-label" data-i18n="knowledge.beneficiaries">Beneficiaries Served</div>
+                                            <div class="stat-label" data-i18n="knowledge.beneficiaries">Beneficiaries
+                                                Served</div>
                                         </div>
                                         <div class="stat-box">
                                             <div class="stat-value">313+</div>
@@ -244,49 +287,118 @@
                                     </div>
                                 </div>
                             </div>
-                            
+
+                            <style>
+                                /* DBT Success Statistics Section */
+                                .stats-container {
+                                    display: flex;
+                                    flex-wrap: wrap;
+                                    gap: 20px;
+                                    margin-top: 20px;
+                                    justify-content: space-between;
+                                }
+
+                                .stat-box {
+                                    flex: 1 1 250px;
+                                    background-color: #ffffff;
+                                    border-radius: 12px;
+                                    padding: 25px 20px;
+                                    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+                                    text-align: center;
+                                    transition: transform 0.3s ease, box-shadow 0.3s ease;
+                                    cursor: default;
+                                }
+
+                                .stat-box:hover {
+                                    transform: translateY(-5px);
+                                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+                                }
+
+                                /* Stat values */
+                                .stat-value {
+                                    font-size: 2rem;
+                                    font-weight: 700;
+                                    color: #1e40af;
+                                    /* deep blue */
+                                    margin-bottom: 10px;
+                                }
+
+                                /* Stat labels */
+                                .stat-label {
+                                    font-size: 1rem;
+                                    font-weight: 500;
+                                    color: #4b5563;
+                                }
+
+                                /* Responsive adjustments */
+                                @media (max-width: 768px) {
+                                    .stats-container {
+                                        flex-direction: column;
+                                        gap: 15px;
+                                    }
+
+                                    .stat-box {
+                                        padding: 20px;
+                                    }
+                                }
+                            </style>
+
                             <div class="action-buttons">
-                                <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.enableDBT">Enable DBT Now</a>
-                                <a href="https://dbtbharat.gov.in" target="_blank" class="btn btn-secondary" data-i18n="knowledge.dbtPortal">Visit DBT Portal</a>
+                                <a href="procedure-guide.html" class="btn btn-primary"
+                                    data-i18n="knowledge.enableDBT">Enable DBT Now</a>
+                                <a href="https://dbtbharat.gov.in" target="_blank" class="btn btn-secondary"
+                                    data-i18n="knowledge.dbtPortal">Visit DBT Portal</a>
                             </div>
                         </div>
                     </div>
-                    
+
                     <div class="tab-panel" id="aadhaar-seeding">
                         <h3 data-i18n="knowledge.aadhaarSeedingTitle">What is Aadhaar Seeding?</h3>
                         <div class="knowledge-card">
                             <div class="concept-overview">
                                 <div class="concept-icon">🌱</div>
-                                <p data-i18n="knowledge.aadhaarSeedingDesc">Aadhaar Seeding is the critical process of mapping your Aadhaar number with your bank account in the bank's core banking system, specifically enabling your account to receive Direct Benefit Transfers (DBT) from government schemes.</p>
+                                <p data-i18n="knowledge.aadhaarSeedingDesc">Aadhaar Seeding is the critical process of
+                                    mapping your Aadhaar number with your bank account in the bank's core banking
+                                    system, specifically enabling your account to receive Direct Benefit Transfers (DBT)
+                                    from government schemes.</p>
                             </div>
-                            
+
                             <div class="concept-details">
                                 <div class="detail-section">
-                                    <h5 data-i18n="knowledge.seedingVsLinking">Seeding vs. Linking - Key Difference:</h5>
+                                    <h5 data-i18n="knowledge.seedingVsLinking">Seeding vs. Linking - Key Difference:
+                                    </h5>
                                     <div class="comparison-table">
                                         <div class="comparison-row">
                                             <div class="comparison-header" data-i18n="knowledge.aspect">Aspect</div>
-                                            <div class="comparison-header" data-i18n="knowledge.aadhaarLinking">Aadhaar Linking</div>
-                                            <div class="comparison-header" data-i18n="knowledge.aadhaarSeeding">Aadhaar Seeding</div>
+                                            <div class="comparison-header" data-i18n="knowledge.aadhaarLinking">Aadhaar
+                                                Linking</div>
+                                            <div class="comparison-header" data-i18n="knowledge.aadhaarSeeding">Aadhaar
+                                                Seeding</div>
                                         </div>
                                         <div class="comparison-row">
                                             <div class="comparison-cell" data-i18n="knowledge.purpose">Purpose</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.linkingPurpose">General identification & authentication</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.seedingPurpose">Specific for government benefit transfers</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.linkingPurpose">General
+                                                identification & authentication</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.seedingPurpose">Specific
+                                                for government benefit transfers</div>
                                         </div>
                                         <div class="comparison-row">
                                             <div class="comparison-cell" data-i18n="knowledge.process">Process</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.linkingProcess">Connecting Aadhaar with services</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.seedingProcess">Mapping Aadhaar in bank's CBS system</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.linkingProcess">Connecting
+                                                Aadhaar with services</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.seedingProcess">Mapping
+                                                Aadhaar in bank's CBS system</div>
                                         </div>
                                         <div class="comparison-row">
                                             <div class="comparison-cell" data-i18n="knowledge.result">Result</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.linkingResult">KYC compliance, identity verification</div>
-                                            <div class="comparison-cell" data-i18n="knowledge.seedingResult">DBT eligibility, scholarship transfers</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.linkingResult">KYC
+                                                compliance, identity verification</div>
+                                            <div class="comparison-cell" data-i18n="knowledge.seedingResult">DBT
+                                                eligibility, scholarship transfers</div>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.seedingMethods">How to Complete Aadhaar Seeding:</h5>
                                     <div class="methods-grid">
@@ -294,9 +406,12 @@
                                             <div class="method-icon">🏢</div>
                                             <h6 data-i18n="knowledge.bankBranchMethod">Bank Branch Visit</h6>
                                             <ul>
-                                                <li data-i18n="knowledge.branchStep1">Visit your bank branch with original Aadhaar card</li>
-                                                <li data-i18n="knowledge.branchStep2">Fill Aadhaar seeding request form</li>
-                                                <li data-i18n="knowledge.branchStep3">Submit to bank official for processing</li>
+                                                <li data-i18n="knowledge.branchStep1">Visit your bank branch with
+                                                    original Aadhaar card</li>
+                                                <li data-i18n="knowledge.branchStep2">Fill Aadhaar seeding request form
+                                                </li>
+                                                <li data-i18n="knowledge.branchStep3">Submit to bank official for
+                                                    processing</li>
                                                 <li data-i18n="knowledge.branchStep4">Get acknowledgment receipt</li>
                                             </ul>
                                         </div>
@@ -304,9 +419,12 @@
                                             <div class="method-icon">💻</div>
                                             <h6 data-i18n="knowledge.onlineMethod">Online Banking</h6>
                                             <ul>
-                                                <li data-i18n="knowledge.onlineStep1">Login to your bank's online portal</li>
-                                                <li data-i18n="knowledge.onlineStep2">Navigate to 'Aadhaar Seeding' section</li>
-                                                <li data-i18n="knowledge.onlineStep3">Enter your 12-digit Aadhaar number</li>
+                                                <li data-i18n="knowledge.onlineStep1">Login to your bank's online portal
+                                                </li>
+                                                <li data-i18n="knowledge.onlineStep2">Navigate to 'Aadhaar Seeding'
+                                                    section</li>
+                                                <li data-i18n="knowledge.onlineStep3">Enter your 12-digit Aadhaar number
+                                                </li>
                                                 <li data-i18n="knowledge.onlineStep4">Verify OTP and submit request</li>
                                             </ul>
                                         </div>
@@ -315,8 +433,10 @@
                                             <h6 data-i18n="knowledge.mobileMethod">Mobile Banking</h6>
                                             <ul>
                                                 <li data-i18n="knowledge.mobileStep1">Open your bank's mobile app</li>
-                                                <li data-i18n="knowledge.mobileStep2">Go to 'Services' > 'Aadhaar Seeding'</li>
-                                                <li data-i18n="knowledge.mobileStep3">Enter Aadhaar number and verify</li>
+                                                <li data-i18n="knowledge.mobileStep2">Go to 'Services' > 'Aadhaar
+                                                    Seeding'</li>
+                                                <li data-i18n="knowledge.mobileStep3">Enter Aadhaar number and verify
+                                                </li>
                                                 <li data-i18n="knowledge.mobileStep4">Confirm seeding request</li>
                                             </ul>
                                         </div>
@@ -324,48 +444,210 @@
                                             <div class="method-icon">🏧</div>
                                             <h6 data-i18n="knowledge.atmMethod">ATM Method</h6>
                                             <ul>
-                                                <li data-i18n="knowledge.atmStep1">Visit bank ATM with your debit card</li>
-                                                <li data-i18n="knowledge.atmStep2">Select 'Services' > 'Aadhaar Services'</li>
+                                                <li data-i18n="knowledge.atmStep1">Visit bank ATM with your debit card
+                                                </li>
+                                                <li data-i18n="knowledge.atmStep2">Select 'Services' > 'Aadhaar
+                                                    Services'</li>
                                                 <li data-i18n="knowledge.atmStep3">Choose 'Aadhaar Seeding' option</li>
                                                 <li data-i18n="knowledge.atmStep4">Enter Aadhaar number and confirm</li>
                                             </ul>
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <div class="detail-section">
                                     <h5 data-i18n="knowledge.seedingVerification">How to Verify Seeding Status:</h5>
                                     <div class="verification-options">
                                         <div class="verification-option">
                                             <div class="option-icon">📞</div>
                                             <h6 data-i18n="knowledge.phoneVerification">Phone Banking</h6>
-                                            <p data-i18n="knowledge.phoneVerificationDesc">Call your bank's customer care and provide Aadhaar number for status check</p>
+                                            <p data-i18n="knowledge.phoneVerificationDesc">Call your bank's customer
+                                                care and provide Aadhaar number for status check</p>
                                         </div>
                                         <div class="verification-option">
                                             <div class="option-icon">🌐</div>
                                             <h6 data-i18n="knowledge.onlineVerification">Online Verification</h6>
-                                            <p data-i18n="knowledge.onlineVerificationDesc">Use bank's website or NPCI Aadhaar Mapper portal for instant status check</p>
+                                            <p data-i18n="knowledge.onlineVerificationDesc">Use bank's website or NPCI
+                                                Aadhaar Mapper portal for instant status check</p>
                                         </div>
                                         <div class="verification-option">
                                             <div class="option-icon">💬</div>
                                             <h6 data-i18n="knowledge.smsVerification">SMS Banking</h6>
-                                            <p data-i18n="knowledge.smsVerificationDesc">Send SMS to bank's designated number with specific format for status update</p>
+                                            <p data-i18n="knowledge.smsVerificationDesc">Send SMS to bank's designated
+                                                number with specific format for status update</p>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            
+
                             <div class="action-buttons">
-                                <a href="procedure-guide.html" class="btn btn-primary" data-i18n="knowledge.startSeedingGuide">Start Seeding Guide</a>
-                                <a href="https://npci.org.in/what-we-do/aadhaar-enabled-payment-system-aeps/product-overview" target="_blank" class="btn btn-secondary" data-i18n="knowledge.npciMapper">NPCI Aadhaar Mapper</a>
+                                <a href="procedure-guide.html" class="btn btn-primary"
+                                    data-i18n="knowledge.startSeedingGuide">Start Seeding Guide</a>
+                                <a href="https://npci.org.in/what-we-do/aadhaar-enabled-payment-system-aeps/product-overview"
+                                    target="_blank" class="btn btn-secondary" data-i18n="knowledge.npciMapper">NPCI
+                                    Aadhaar Mapper</a>
                             </div>
                         </div>
                     </div>
-                    
+                    <style>
+                        /* Container styling */
+                        .detail-section {
+                            margin: 40px 0;
+                            padding: 20px;
+                            background-color: #f9fafb;
+                            border-radius: 12px;
+                            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+                        }
+
+                        /* Section headings */
+                        .detail-section h5 {
+                            font-size: 1.6rem;
+                            font-weight: 600;
+                            margin-bottom: 20px;
+                            color: #1f2937;
+                        }
+
+                        /* Methods grid */
+                        .methods-grid {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+                            gap: 20px;
+                        }
+
+                        /* Individual method card */
+                        .method-item {
+                            background-color: #ffffff;
+                            border-radius: 10px;
+                            padding: 20px;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            cursor: pointer;
+                            border: 1px solid #e5e7eb;
+                        }
+
+                        .method-item:hover {
+                            transform: translateY(-5px);
+                            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+                        }
+
+                        /* Icon styling */
+                        .method-icon {
+                            font-size: 2.5rem;
+                            margin-bottom: 10px;
+                        }
+
+                        /* Method title */
+                        .method-item h6 {
+                            font-size: 1.2rem;
+                            font-weight: 600;
+                            margin-bottom: 10px;
+                            color: #111827;
+                        }
+
+                        /* Method steps */
+                        .method-item ul {
+                            padding-left: 20px;
+                        }
+
+                        .method-item ul li {
+                            margin-bottom: 8px;
+                            font-size: 0.95rem;
+                            color: #374151;
+                        }
+
+                        /* Verification section */
+                        .verification-options {
+                            display: grid;
+                            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                            gap: 20px;
+                            margin-top: 20px;
+                        }
+
+                        /* Individual verification card */
+                        .verification-option {
+                            background-color: #ffffff;
+                            border-radius: 10px;
+                            padding: 20px;
+                            border: 1px solid #e5e7eb;
+                            transition: transform 0.3s ease, box-shadow 0.3s ease;
+                            cursor: default;
+                        }
+
+                        .verification-option:hover {
+                            transform: translateY(-3px);
+                            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+                        }
+
+                        /* Verification icons */
+                        .option-icon {
+                            font-size: 2rem;
+                            margin-bottom: 10px;
+                        }
+
+                        /* Verification title */
+                        .verification-option h6 {
+                            font-size: 1.15rem;
+                            font-weight: 600;
+                            margin-bottom: 8px;
+                        }
+
+                        /* Verification description */
+                        .verification-option p {
+                            font-size: 0.95rem;
+                            color: #4b5563;
+                        }
+
+                        /* Action buttons */
+                        .action-buttons {
+                            margin-top: 30px;
+                            display: flex;
+                            flex-wrap: wrap;
+                            gap: 15px;
+                        }
+
+                        .action-buttons .btn {
+                            padding: 12px 25px;
+                            border-radius: 8px;
+                            font-weight: 600;
+                            text-decoration: none;
+                            transition: background-color 0.3s ease, color 0.3s ease;
+                        }
+
+                        .btn-primary {
+                            background-color: #2563eb;
+                            color: #ffffff;
+                            border: none;
+                        }
+
+                        .btn-primary:hover {
+                            background-color: #1d4ed8;
+                        }
+
+                        .btn-secondary {
+                            background-color: #e5e7eb;
+                            color: #111827;
+                            border: none;
+                        }
+
+                        .btn-secondary:hover {
+                            background-color: #d1d5db;
+                        }
+
+                        /* Responsive adjustments */
+                        @media (max-width: 768px) {
+
+                            .methods-grid,
+                            .verification-options {
+                                grid-template-columns: 1fr;
+                            }
+                        }
+                    </style>
+
+
                     <div class="tab-panel" id="myths-faqs">
                         <h3 data-i18n="knowledge.mythsTitle">Common Myths & FAQs</h3>
                         <div class="faq-search">
-                            <input type="text" id="faqSearch" placeholder="Search FAQs..." data-i18n-placeholder="knowledge.searchPlaceholder">
+                            <input type="text" id="faqSearch" placeholder="Search FAQs..."
+                                data-i18n-placeholder="knowledge.searchPlaceholder">
                         </div>
                         <div class="faq-accordion" id="faqAccordion">
                             <!-- FAQs loaded from JSON -->
@@ -375,7 +657,6 @@
             </div>
         </div>
     </main>
-
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
@@ -387,8 +668,11 @@
         </div>
     </footer>
 
+    <!-- Chat Widget -->
     <div class="chat-widget" id="chatWidget">
-        <div class="chat-toggle" id="chatToggle">💬</div>
+        <div class="chat-toggle" id="chatToggle">
+            <span>🤖</span> <!-- Robot icon instead of 💬 -->
+        </div>
         <div class="chat-window" id="chatWindow">
             <div class="chat-header">
                 <span data-i18n="chatbot.title">Help Assistant</span>
@@ -396,15 +680,40 @@
             </div>
             <div class="chat-messages" id="chatMessages"></div>
             <div class="chat-input">
-                <input type="text" id="chatInput" data-i18n-placeholder="chatbot.placeholder">
+                <input type="text" id="chatInput" placeholder="Ask about DBT, Aadhaar or Scholarships..."
+                    data-i18n-placeholder="chatbot.placeholder">
                 <button id="chatSend">Send</button>
             </div>
         </div>
     </div>
+    <style>
+        /* Chat Toggle Button with Robot Icon */
+        .chat-toggle {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: #004aad;
+            color: #fff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            font-size: 2rem;
+            /* bigger for robot icon */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+            transition: all 0.3s ease;
+        }
+
+        .chat-toggle:hover {
+            background: #003580;
+            transform: scale(1.1);
+        }
+    </style>
 
     <script src="js/i18n.js"></script>
     <script src="js/main.js"></script>
     <script src="js/knowledge.js"></script>
     <script src="js/chatbot.js"></script>
 </body>
+
 </html>
